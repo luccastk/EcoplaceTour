@@ -3,4 +3,12 @@ export const gap = {
   sm: "16px",
   md: "22px",
   lg: "40px",
-};
+} as const;
+
+export const space = {
+  xs: "10px",
+  sm: "20px",
+  md: "32px",
+  lg: "46px",
+  xl: "52px",
+} as const;

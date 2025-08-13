@@ -4,5 +4,5 @@ export const size = {
   md: "16px",
   lg: "20px",
   xl: "32px",
-  "2-xl": "48",
+  "2-xl": "48px",
 } as const;

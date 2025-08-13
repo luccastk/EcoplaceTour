@@ -8,4 +8,4 @@ export const palette = {
   warning: "#F2B705",
   white: "#ffffff",
   florest: "#6C9380",
-};
+} as const;
