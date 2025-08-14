@@ -1,5 +1,16 @@
-import LogoSVG from "../../assets/logo.svg";
+import { useNavigate } from "react-router-dom";
+import LogoSVG from "../../assets/logo.png";
 
 export function Logo() {
-  return <LogoSVG />;
+  const navigate = useNavigate();
+
+  return (
+    <img
+      src={LogoSVG}
+      alt="Logo"
+      width={"50px"}
+      onClick={() => navigate("/")}
+      style={{ cursor: "pointer" }}
+    />
+  );
 }

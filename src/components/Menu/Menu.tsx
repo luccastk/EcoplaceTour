@@ -1,34 +1,34 @@
-import { Link } from "react-router-dom";
-import { gap } from "../../theme/spaces";
+import clsx from "clsx";
+import { Link, useLocation } from "react-router-dom";
+import { links } from "../../types/menu-item";
 import { Button } from "../Button/Button";
+import { active, container, linkStyle, menu, nav } from "./menu.css";
+import type React from "react";
 
-const links = {
-  id: 1,
-  path: "/",
-  label: "Home",
-};
+export function Menu({ ref }: React.ComponentPropsWithRef<"div">) {
+  const location = useLocation();
 
-export function Menu() {
   return (
-    <div
-      style={{
-        padding: "20px",
-      }}
-    >
-      <nav
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: gap.md,
-        }}
-      >
-        <Link to={"/"}>Home</Link>
-        <Link to={"/about"}>Sobre</Link>
-        <Link to={"/enterprises"}>Empresas</Link>
-        <Link to={"/contact"}>Contato</Link>
-        <Link to={"/partnership"}>Parceria</Link>
-        <Button label={"Solicitar Orçamento"} />
-      </nav>
+    <div className={menu} ref={ref}>
+      <div className={container}>
+        <nav className={nav}>
+          {links.map((link) => (
+            <Link
+              key={link.id}
+              to={link.path}
+              className={clsx(
+                linkStyle,
+                location.pathname === link.path ? active : ""
+              )}
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+        <Button>
+          <Link to={"/badge"}>Solicitar Orçamento</Link>
+        </Button>
+      </div>
     </div>
   );
 }

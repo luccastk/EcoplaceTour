@@ -4,27 +4,27 @@ const Roboto = "Roboto";
 const OpenSans = "Open Sans";
 
 globalFontFace(Roboto, {
-  src: "url(/assets/fonts/Roboto_Condensed-Regular.ttf)",
+  src: "url(/assets/fonts/RobotoCondensed-Regular.woff2) format('woff2')",
   fontWeight: 400,
 });
 
 globalFontFace(Roboto, {
-  src: "url(/assets/fonts/Roboto_Condensed-Mediumx.ttf)",
+  src: "url(/assets/fonts/RobotoCondensed-Medium.woff2) format('woff2')",
   fontWeight: 500,
 });
 
 globalFontFace(Roboto, {
-  src: "url(/assets/fonts/Roboto-SemiBold.ttf)",
+  src: "url(/assets/fonts/Roboto-SemiBold.woff2) format('woff2')",
   fontWeight: 600,
 });
 
 globalFontFace(Roboto, {
-  src: "url(/assets/fonts/Roboto-Bold.ttf)",
+  src: "url(/assets/fonts/Roboto-Bold.woff2) format('woff2')",
   fontWeight: 700,
 });
 
 globalFontFace(OpenSans, {
-  src: "url(/assets/fonts/OpenSans-Regular.ttf)",
+  src: "url(/assets/fonts/OpenSans-Regular.woff2) format('woff2')",
   fontWeight: 400,
 });
 

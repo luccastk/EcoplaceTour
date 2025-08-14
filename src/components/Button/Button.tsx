@@ -5,28 +5,34 @@ import clsx from "clsx";
 type Direction = "top" | "right" | "bottom" | "left";
 
 type ButtonProps = {
-  label: string;
-} & ButtonVariants;
+  className?: string;
+} & Omit<React.ComponentPropsWithRef<"button">, "className"> &
+  ButtonVariants;
 
 type ButtonIconProps = {
   icon: ReactNode;
   direction?: Exclude<Direction, "top" | "bottom">;
 } & ButtonProps;
 
-export function Button({ label, variant }: ButtonProps) {
-  return <button className={buttonStyle({ variant })}>{label}</button>;
+export function Button({ variant, className, ref, children }: ButtonProps) {
+  return (
+    <button ref={ref} className={clsx(buttonStyle({ variant }), className)}>
+      {children}
+    </button>
+  );
 }
 
 export function ButtonIcon({
   icon,
-  label,
   variant,
   direction = "left",
+  className,
+  children,
 }: ButtonIconProps) {
   return (
-    <button className={clsx(buttonIcon, buttonStyle({ variant }))}>
+    <button className={clsx(buttonIcon, buttonStyle({ variant }), className)}>
       {direction === "left" && icon}
-      {label}
+      {children}
       {direction === "right" && icon}
     </button>
   );

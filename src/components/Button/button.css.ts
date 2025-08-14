@@ -3,12 +3,17 @@ import { recipe, type RecipeVariants } from "@vanilla-extract/recipes";
 import { palette } from "../../theme/palettes";
 import { radii } from "../../theme/radii";
 import { gap, space } from "../../theme/spaces";
+import { size } from "../../theme/sizes";
+import { fontFamily } from "../../theme/fonts.css";
 
 export const buttonStyle = recipe({
   base: {
+    fontFamily: fontFamily.primary,
+    fontWeight: "bold",
+    fontSize: size.md,
     cursor: "pointer",
     color: palette.white,
-    padding: `${space.xs} 0`,
+    padding: `${space.xs} ${space.sm}`,
     borderRadius: radii.sm,
   },
   variants: {

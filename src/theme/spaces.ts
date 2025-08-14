@@ -6,7 +6,7 @@ export const gap = {
 } as const;
 
 export const space = {
-  xs: "10px",
+  xs: "14px",
   sm: "20px",
   md: "32px",
   lg: "46px",
