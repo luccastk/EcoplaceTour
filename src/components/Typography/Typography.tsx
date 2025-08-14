@@ -10,14 +10,14 @@ type TypographyProps = {
 export function Typography({
   tag,
   variant,
-  disabled,
+  color,
   w,
   align,
   children,
 }: TypographyProps) {
   const Component = tag || "p";
   return (
-    <Component className={typographyStyle({ variant, disabled, w, align })}>
+    <Component className={typographyStyle({ variant, color, w, align })}>
       {children}
     </Component>
   );

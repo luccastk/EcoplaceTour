@@ -29,11 +29,6 @@ export const typographyStyle = recipe({
         fontSize: size.xs,
       },
     },
-    disabled: {
-      true: {
-        color: palette.disabled,
-      },
-    },
     w: {
       regular: {
         fontWeight: fontWeight.regular,
@@ -57,6 +52,14 @@ export const typographyStyle = recipe({
       },
       end: {
         textAlign: "end",
+      },
+    },
+    color: {
+      disabled: {
+        color: palette.disabled,
+      },
+      white: {
+        color: palette.white,
       },
     },
   },
