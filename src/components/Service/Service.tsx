@@ -105,7 +105,7 @@ export function Service() {
           <Typography tag="h2" variant="h2" w="bold" align="center">
             Nossos Serviços
           </Typography>
-          <div style={{ maxWidth: "44rem", margin: "0 auto" }}>
+          <div style={{ maxWidth: "800px", margin: "0 auto" }}>
             <Typography variant="h3" align="center" color="light-green">
               Oferecemos experiências educacionais completas que conectam teoria
               e prática, proporcionando aos estudantes uma visão real do mercado

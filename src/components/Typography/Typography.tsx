@@ -4,7 +4,7 @@ type TagVariants = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span";
 
 type TypographyProps = {
   tag?: TagVariants;
-} & React.PropsWithChildren &
+} & Omit<React.PropsWithChildren, TagVariants | "tag"> &
   TypographyVariants;
 
 export function Typography({
@@ -14,10 +14,14 @@ export function Typography({
   w,
   align,
   children,
+  ...rest
 }: TypographyProps) {
   const Component = tag || "p";
   return (
-    <Component className={typographyStyle({ variant, color, w, align })}>
+    <Component
+      className={typographyStyle({ variant, color, w, align })}
+      {...rest}
+    >
       {children}
     </Component>
   );

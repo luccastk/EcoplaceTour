@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Navbar } from "./components/Navbar/Navbar";
+import { Header } from "./components/Header/Header";
 import {
   About,
   Contact,
@@ -13,7 +13,7 @@ import "./theme/global.css";
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
+      <Header />
       <main style={{ paddingTop: "90px" }}>
         <Routes>
           <Route path="/" element={<Home />} />

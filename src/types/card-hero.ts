@@ -4,5 +4,5 @@ export interface CardHero {
   id: number;
   icon: ReactNode;
   title: string;
-  subtitle: string;
+  description: string;
 }

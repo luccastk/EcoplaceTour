@@ -1,4 +1,5 @@
 import { globalStyle, style } from "@vanilla-extract/css";
+import { space } from "./spaces";
 
 globalStyle("*, *::before, *::after", {
   boxSizing: "border-box",
@@ -7,7 +8,6 @@ globalStyle("*, *::before, *::after", {
 globalStyle("body", {
   margin: 0,
   fontFamily: "Helvetica, Arial, sans-serif;",
-  WebkitFontSmoothing: "antialiased",
 });
 
 globalStyle("a", {
@@ -29,12 +29,12 @@ globalStyle("p, h1, h2, h3, h4, h5", {
 });
 
 export const container = style({
-  maxWidth: "1400px",
+  maxWidth: "1200px",
   margin: "0 auto",
-  padding: "52px 0",
+  padding: `1rem 0`,
   "@media": {
     "screen and (max-width: 1000px)": {
-      padding: "52px 20px",
+      padding: `${space.xs} ${space.sm}`,
     },
   },
 });

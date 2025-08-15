@@ -1,15 +1,21 @@
 import { style } from "@vanilla-extract/css";
 
-import localImage from "../../assets/imgs/hero-image.jpg";
-import { space } from "../../theme/spaces";
+import ImgHero from "../../assets/imgs/hero-image.jpg";
+import { gap, space } from "../../theme/spaces";
 
-export const hero = style({
-  minHeight: 0,
-  paddingTop: "80px",
-  padding: space.sm,
-  backgroundImage: `url(${localImage})`,
-  backgroundSize: "cover",
+export const heroContainer = style({
+  padding: `${space.lg} 0`,
+  backgroundImage: `url(${ImgHero})`,
   backgroundRepeat: "no-repeat",
+  backgroundSize: "cover",
   backgroundPosition: "center",
-  boxShadow: "inset 0 0 0 2000px rgba(0, 0, 0, 0.5)",
+  boxShadow: "inset 0 0 0 2000px rgba(0, 0, 0, 0.4)",
+});
+
+export const groupBtn = style({
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  gap: gap.xs,
+  marginTop: space.md,
 });
