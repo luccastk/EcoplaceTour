@@ -1,12 +1,8 @@
 import type React from "react";
-import { radii } from "../../theme/radii";
+import { box, type BoxVariants } from "./box.css";
 
-export function Box({ children }: React.PropsWithChildren) {
-  return (
-    <div
-      style={{ background: "rgba(255, 255, 255, 0.2)", borderRadius: radii.md }}
-    >
-      {children}
-    </div>
-  );
+type BoxProps = React.PropsWithChildren & BoxVariants;
+
+export function Box({ elevation, children }: BoxProps) {
+  return <div className={box({ elevation })}>{children}</div>;
 }

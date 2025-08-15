@@ -4,12 +4,14 @@ import { radii } from "../../theme/radii";
 import { gap, space } from "../../theme/spaces";
 
 export const header = style({
+  zIndex: 999,
   width: "100%",
   height: "90px",
   position: "fixed",
   top: 0,
   background: palette.background,
   overflow: "hidden",
+  boxShadow: "0px 5px 13px -6px rgba(0,0,0,0.5)",
 });
 
 export const navbar = style({

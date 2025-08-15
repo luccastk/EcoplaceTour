@@ -1,39 +1,53 @@
-import type { ReactNode } from "react";
-import { buttonStyle, buttonIcon, type ButtonVariants } from "./button.css";
 import clsx from "clsx";
+import type { ComponentPropsWithoutRef, ElementType, ReactNode } from "react";
+import { buttonIcon, buttonStyle, type ButtonVariants } from "./button.css";
 
 type Direction = "top" | "right" | "bottom" | "left";
 
-type ButtonProps = {
+type ButtonBaseProps<T extends ElementType> = {
+  as?: T;
   className?: string;
-} & Omit<React.ComponentPropsWithRef<"button">, "className"> &
+} & Omit<ComponentPropsWithoutRef<T>, "className"> &
   ButtonVariants;
 
-type ButtonIconProps = {
-  icon: ReactNode;
-  direction?: Exclude<Direction, "top" | "bottom">;
-} & ButtonProps;
-
-export function Button({ variant, className, ref, children }: ButtonProps) {
+export function Button<T extends ElementType = "button">({
+  as,
+  variant,
+  className,
+  children,
+  ...rest
+}: ButtonBaseProps<T>) {
+  const Component = as || "button";
   return (
-    <button ref={ref} className={clsx(buttonStyle({ variant }), className)}>
+    <Component className={clsx(buttonStyle({ variant }), className)} {...rest}>
       {children}
-    </button>
+    </Component>
   );
 }
 
-export function ButtonIcon({
+type ButtonIconProps<T extends ElementType> = ButtonBaseProps<T> & {
+  icon: ReactNode;
+  direction?: Exclude<Direction, "top" | "bottom">;
+};
+
+export function ButtonIcon<T extends ElementType = "button">({
+  as,
   icon,
   variant,
   direction = "left",
   className,
   children,
-}: ButtonIconProps) {
+  ...rest
+}: ButtonIconProps<T>) {
+  const Component = as || "button";
   return (
-    <button className={clsx(buttonIcon, buttonStyle({ variant }), className)}>
+    <Component
+      className={clsx(buttonIcon, buttonStyle({ variant }), className)}
+      {...rest}
+    >
       {direction === "left" && icon}
       {children}
       {direction === "right" && icon}
-    </button>
+    </Component>
   );
 }

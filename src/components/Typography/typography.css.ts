@@ -1,11 +1,9 @@
 import { recipe, type RecipeVariants } from "@vanilla-extract/recipes";
-import { fontFamily, fontWeight } from "../../theme/fonts.css";
 import { palette } from "../../theme/palettes";
 import { size } from "../../theme/sizes";
 
 export const typographyStyle = recipe({
   base: {
-    fontFamily: fontFamily.primary,
     color: palette.text,
   },
   variants: {
@@ -31,16 +29,16 @@ export const typographyStyle = recipe({
     },
     w: {
       regular: {
-        fontWeight: fontWeight.regular,
+        fontWeight: 400,
       },
       medium: {
-        fontWeight: fontWeight.medium,
+        fontWeight: 500,
       },
       semiBold: {
-        fontWeight: fontWeight.semibold,
+        fontWeight: 600,
       },
       bold: {
-        fontWeight: fontWeight.bold,
+        fontWeight: 700,
       },
     },
     align: {
@@ -57,6 +55,9 @@ export const typographyStyle = recipe({
     color: {
       disabled: {
         color: palette.disabled,
+      },
+      "light-green": {
+        color: palette.florest,
       },
       white: {
         color: palette.white,

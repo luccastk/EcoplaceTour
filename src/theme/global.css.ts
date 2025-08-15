@@ -1,5 +1,4 @@
-import { globalStyle } from "@vanilla-extract/css";
-import { fontFamily } from "./fonts.css";
+import { globalStyle, style } from "@vanilla-extract/css";
 
 globalStyle("*, *::before, *::after", {
   boxSizing: "border-box",
@@ -7,7 +6,7 @@ globalStyle("*, *::before, *::after", {
 
 globalStyle("body", {
   margin: 0,
-  fontFamily: fontFamily.primary,
+  fontFamily: "Helvetica, Arial, sans-serif;",
   WebkitFontSmoothing: "antialiased",
 });
 
@@ -27,4 +26,15 @@ globalStyle("p, h1, h2, h3, h4, h5", {
   font: "inherit",
   margin: 0,
   padding: 0,
+});
+
+export const container = style({
+  maxWidth: "1400px",
+  margin: "0 auto",
+  padding: "52px 0",
+  "@media": {
+    "screen and (max-width: 1000px)": {
+      padding: "52px 20px",
+    },
+  },
 });
