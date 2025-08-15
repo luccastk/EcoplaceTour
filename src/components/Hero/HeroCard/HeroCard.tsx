@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Icon } from "../../Icon/Icon";
 import { Typography } from "../../Typography/Typography";
 import { card } from "./heroCard.css";
 
@@ -11,7 +12,7 @@ type HeroCardProps = {
 export function HeroCard({ icon, title, description }: HeroCardProps) {
   return (
     <div className={card}>
-      <i>{icon}</i>
+      <Icon>{icon}</Icon>
       <Typography tag="h3" variant="h3" w="bold" color="white">
         {title}
       </Typography>

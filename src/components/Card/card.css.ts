@@ -3,6 +3,11 @@ import { radii } from "../../theme/radii";
 import { space } from "../../theme/spaces";
 
 export const card = style({
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  gap: space.sm,
+  height: "100%",
   boxShadow: "0 1px 2px 0 rgb(0 0 0 / .05)",
   borderRadius: radii.sm,
   padding: space.sm,

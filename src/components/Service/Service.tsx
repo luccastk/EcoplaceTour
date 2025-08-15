@@ -3,12 +3,15 @@ import { FiShield } from "react-icons/fi";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 import { IoSchoolOutline } from "react-icons/io5";
 import { container } from "../../theme/global.css";
-import { gap, space } from "../../theme/spaces";
+import { palette } from "../../theme/palettes";
+import { gap } from "../../theme/spaces";
 import type { CardService } from "../../types/card-service";
 import { Card } from "../Card/Card";
+import { CardDescription } from "../Card/CardDescription/CardDescription";
+import { CardTitle } from "../Card/CardTitle/CardTitle";
 import { Stack } from "../Stack/Stack";
 import { Typography } from "../Typography/Typography";
-import { palette } from "../../theme/palettes";
+import { Icon } from "../Icon/Icon";
 
 const cards: CardService[] = [
   {
@@ -116,22 +119,17 @@ export function Service() {
         <Stack>
           {cards.map((item) => (
             <Card key={item.id}>
+              <Icon>{item.icon}</Icon>
+              <CardTitle>{item.title}</CardTitle>
+              <CardDescription>{item.description}</CardDescription>
               <div
                 style={{
                   display: "flex",
                   flexDirection: "column",
-                  alignItems: "center",
-                  gap: space.sm,
-                  height: "100%",
+                  gap: gap.md,
+                  marginTop: "auto",
                 }}
               >
-                {item.icon}
-                <Typography tag="h3" variant="h3" w="bold" align="center">
-                  {item.title}
-                </Typography>
-                <Typography color="light-green" align="center">
-                  {item.description}
-                </Typography>
                 {item.tags.map((tag) => (
                   <div
                     key={tag.id}

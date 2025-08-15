@@ -13,19 +13,19 @@ import { HeroTitle } from "./HeroTitle/HeroTitle";
 const cards: CardHero[] = [
   {
     id: 0,
-    icon: <IoBookOutline color={palette.warning} size={"70px"} />,
+    icon: <IoBookOutline color={palette.warning} />,
     title: "Educação Prática",
     description: "Aprendizado real dentro das empresas",
   },
   {
     id: 1,
-    icon: <IoPeopleSharp color={palette.warning} size={"70px"} />,
+    icon: <IoPeopleSharp color={palette.warning} />,
     title: "Networking",
     description: "Conexões valiosas para o futuro",
   },
   {
     id: 2,
-    icon: <FiArrowDownRight color={palette.warning} size={"70px"} />,
+    icon: <FiArrowDownRight color={palette.warning} />,
     title: "Inspiração",
     description: "Motivação para carreiras futuras",
   },
