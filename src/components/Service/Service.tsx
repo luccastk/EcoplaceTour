@@ -4,14 +4,15 @@ import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 import { IoSchoolOutline } from "react-icons/io5";
 import { container } from "../../theme/global.css";
 import { palette } from "../../theme/palettes";
-import { gap } from "../../theme/spaces";
 import type { CardService } from "../../types/card-service";
 import { Card } from "../Card/Card";
 import { CardDescription } from "../Card/CardDescription/CardDescription";
+import { CardTag } from "../Card/CardTag/CardTag";
 import { CardTitle } from "../Card/CardTitle/CardTitle";
-import { Stack } from "../Stack/Stack";
-import { Typography } from "../Typography/Typography";
 import { Icon } from "../Icon/Icon";
+import { SectionHead } from "../SectionHead/SectionHead";
+import { Stack } from "../Stack/Stack";
+import { containerService, tags } from "./service.css";
 
 const cards: CardService[] = [
   {
@@ -23,23 +24,17 @@ const cards: CardService[] = [
     tags: [
       {
         id: 0,
-        icon: (
-          <IoMdCheckmarkCircleOutline size={"16px"} color={palette.primary} />
-        ),
+        icon: <IoMdCheckmarkCircleOutline color={palette.primary} />,
         label: "Roteiros personalizados",
       },
       {
         id: 1,
-        icon: (
-          <IoMdCheckmarkCircleOutline size={"16px"} color={palette.primary} />
-        ),
+        icon: <IoMdCheckmarkCircleOutline color={palette.primary} />,
         label: "Material didático",
       },
       {
         id: 2,
-        icon: (
-          <IoMdCheckmarkCircleOutline size={"16px"} color={palette.primary} />
-        ),
+        icon: <IoMdCheckmarkCircleOutline color={palette.primary} />,
         label: "Guias especializados",
       },
     ],
@@ -53,23 +48,17 @@ const cards: CardService[] = [
     tags: [
       {
         id: 0,
-        icon: (
-          <IoMdCheckmarkCircleOutline size={"16px"} color={palette.primary} />
-        ),
+        icon: <IoMdCheckmarkCircleOutline color={palette.primary} />,
         label: "Temas adaptados",
       },
       {
         id: 1,
-        icon: (
-          <IoMdCheckmarkCircleOutline size={"16px"} color={palette.primary} />
-        ),
+        icon: <IoMdCheckmarkCircleOutline color={palette.primary} />,
         label: "Experiências práticas",
       },
       {
         id: 2,
-        icon: (
-          <IoMdCheckmarkCircleOutline size={"16px"} color={palette.primary} />
-        ),
+        icon: <IoMdCheckmarkCircleOutline color={palette.primary} />,
         label: "Acompanhamento",
       },
     ],
@@ -102,48 +91,23 @@ const cards: CardService[] = [
 
 export function Service() {
   return (
-    <section style={{ background: palette.background }}>
+    <section className={containerService}>
       <div className={container}>
-        <div style={{ display: "flex", flexDirection: "column", gap: gap.md }}>
-          <Typography tag="h2" variant="h2" w="bold" align="center">
-            Nossos Serviços
-          </Typography>
-          <div style={{ maxWidth: "800px", margin: "0 auto" }}>
-            <Typography variant="h3" align="center" color="light-green">
-              Oferecemos experiências educacionais completas que conectam teoria
-              e prática, proporcionando aos estudantes uma visão real do mercado
-              de trabalho.
-            </Typography>
-          </div>
-        </div>
+        <SectionHead
+          title={"Nossos Serviços"}
+          subtitle={
+            "Oferecemos experiências educacionais completas que conectam teoria e  prática, proporcionando aos estudantes uma visão real do mercado de  trabalho."
+          }
+        />
         <Stack>
           {cards.map((item) => (
             <Card key={item.id}>
               <Icon>{item.icon}</Icon>
               <CardTitle>{item.title}</CardTitle>
               <CardDescription>{item.description}</CardDescription>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: gap.md,
-                  marginTop: "auto",
-                }}
-              >
+              <div className={tags}>
                 {item.tags.map((tag) => (
-                  <div
-                    key={tag.id}
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      gap: gap.xs,
-                      marginTop: "auto",
-                    }}
-                  >
-                    <div>{tag.icon}</div>
-                    <Typography align="center">{tag.label}</Typography>
-                  </div>
+                  <CardTag key={tag.id} icon={tag.icon} text={tag.label} />
                 ))}
               </div>
             </Card>

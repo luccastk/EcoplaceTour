@@ -51,6 +51,10 @@ export const typographyStyle = recipe({
       end: {
         textAlign: "end",
       },
+      justify: {
+        textAlign: "justify",
+        hyphens: "auto",
+      },
     },
     color: {
       disabled: {
@@ -61,6 +65,9 @@ export const typographyStyle = recipe({
       },
       white: {
         color: palette.white,
+      },
+      text: {
+        color: palette.text,
       },
     },
   },

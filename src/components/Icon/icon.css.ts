@@ -2,19 +2,29 @@ import { recipe, type RecipeVariants } from "@vanilla-extract/recipes";
 
 export const icon = recipe({
   base: {
-    fontSize: "70px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
   },
   variants: {
-    small: {
-      true: {
+    size: {
+      xs: {
+        fontSize: "12px",
+      },
+      sm: {
+        fontSize: "20px",
+      },
+      md: {
         fontSize: "30px",
       },
-    },
-    large: {
-      true: {
+      lg: { fontSize: "70px" },
+      xl: {
         fontSize: "90px",
       },
     },
+  },
+  defaultVariants: {
+    size: "lg",
   },
 });
 

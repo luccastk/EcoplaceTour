@@ -2,7 +2,13 @@ import clsx from "clsx";
 import type React from "react";
 import type { ReactNode } from "react";
 import { Link as RouterLink, useLocation } from "react-router-dom";
-import { content, link, type LinkVariant } from "./link.css";
+import { Icon } from "../Icon/Icon";
+import {
+  content,
+  link,
+  type LinkJustifyVariant,
+  type LinkVariant,
+} from "./link.css";
 
 type LinkProps = {
   icon?: ReactNode;
@@ -10,6 +16,7 @@ type LinkProps = {
   path: string;
   classNames?: string;
 } & LinkVariant &
+  LinkJustifyVariant &
   React.PropsWithChildren;
 
 export function Link({
@@ -17,13 +24,14 @@ export function Link({
   showActive,
   path,
   variant,
+  justify,
   classNames,
   children,
 }: LinkProps) {
   const navigator = useLocation();
 
   const linkActive = navigator.pathname === path && showActive;
-  const iconStyle = icon && content;
+  const iconStyle = icon && content({ justify });
 
   return (
     <RouterLink
@@ -35,7 +43,7 @@ export function Link({
       )}
     >
       {children}
-      {icon}
+      <Icon size="xs">{icon}</Icon>
     </RouterLink>
   );
 }

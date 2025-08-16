@@ -1,15 +1,32 @@
-import { style } from "@vanilla-extract/css";
 import { recipe, type RecipeVariants } from "@vanilla-extract/recipes";
 import { breakpoints } from "../../theme/breakpoints";
 import { palette } from "../../theme/palettes";
 import { radii } from "../../theme/radii";
+import { size } from "../../theme/sizes";
 import { gap, space } from "../../theme/spaces";
 
-export const content = style({
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  gap: gap.sm,
+export const content = recipe({
+  base: {
+    display: "flex",
+    alignItems: "center",
+    gap: gap.xs,
+  },
+  variants: {
+    justify: {
+      center: {
+        justifyContent: "center",
+      },
+      start: {
+        justifyContent: "start",
+      },
+      end: {
+        justifyContent: "end",
+      },
+    },
+  },
+  defaultVariants: {
+    justify: "center",
+  },
 });
 
 export const link = recipe({
@@ -21,6 +38,11 @@ export const link = recipe({
   },
   variants: {
     variant: {
+      green: {
+        padding: 0,
+        color: palette.primary,
+        fontSize: size.xs,
+      },
       gradient: {
         background: `linear-gradient(99deg,${palette.primary}, ${palette.secondary})`,
         transform: "scale(.95)",
@@ -107,3 +129,4 @@ export const link = recipe({
 });
 
 export type LinkVariant = RecipeVariants<typeof link>;
+export type LinkJustifyVariant = RecipeVariants<typeof content>;
