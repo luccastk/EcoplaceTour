@@ -4,7 +4,7 @@ import { radii } from "../../theme/radii";
 
 export const box = recipe({
   base: {
-    borderRadius: radii.md,
+    borderRadius: radii.sm,
     background: palette.white,
   },
   variants: {

@@ -16,6 +16,12 @@ globalStyle("a", {
   cursor: "pointer",
 });
 
+globalStyle("input", {
+  border: "none",
+  padding: 0,
+  outline: "none",
+});
+
 globalStyle("button", {
   border: "none",
   padding: 0,

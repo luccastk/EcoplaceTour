@@ -6,9 +6,9 @@ import { Service } from "../../components/Service/Service";
 export function Home() {
   return (
     <>
-      <Hero />
+      {/* <Hero />
       <Service />
-      <Enterprise />
+      <Enterprise /> */}
       <Contact />
     </>
   );
