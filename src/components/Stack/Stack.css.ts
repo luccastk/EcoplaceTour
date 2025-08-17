@@ -8,7 +8,7 @@ export const stack = style({
   gap: gap.md,
   marginTop: space.md,
   "@media": {
-    "screen and (max-width: 768px)": {
+    "screen and (max-width: 890px)": {
       gridTemplateColumns: "1fr",
     },
   },

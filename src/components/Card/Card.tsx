@@ -1,6 +1,17 @@
 import type React from "react";
-import { card } from "./card.css";
+import { card, type CardVariants } from "./card.css";
+import { Description } from "./Description/Description";
+import { Tag } from "./Tag/Tag";
+import { Tags } from "./Tags/Tags";
+import { Title } from "./Title/Title";
 
-export function Card({ children }: React.PropsWithChildren) {
-  return <div className={card}>{children}</div>;
+type CardProps = React.PropsWithChildren & CardVariants;
+
+export function Card({ variant, children }: CardProps) {
+  return <div className={card({ variant })}>{children}</div>;
 }
+
+Card.Description = Description;
+Card.Title = Title;
+Card.Tag = Tag;
+Card.Tags = Tags;

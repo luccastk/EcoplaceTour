@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Header } from "./components/Header/Header";
+import { Navbar } from "./components/Navbar/Navbar";
 import {
   About,
   Contact,
@@ -9,11 +9,12 @@ import {
   Partnership,
 } from "./pages";
 import "./theme/global.css";
+import { Footer } from "./components/Footer/Footer";
 
 function App() {
   return (
     <BrowserRouter>
-      <Header />
+      <Navbar />
       <main style={{ paddingTop: "90px" }}>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -24,6 +25,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
+      <Footer />
     </BrowserRouter>
   );
 }

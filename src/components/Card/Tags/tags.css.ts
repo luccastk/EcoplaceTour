@@ -1,10 +1,9 @@
 import { style } from "@vanilla-extract/css";
 import { gap } from "../../../theme/spaces";
 
-export const title = style({
-  maxWidth: "900px",
-  margin: "0 auto",
+export const tags = style({
   display: "flex",
   flexDirection: "column",
-  gap: gap.sm,
+  gap: gap.md,
+  marginTop: "auto",
 });

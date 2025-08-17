@@ -14,10 +14,12 @@ export const header = style({
 });
 
 export const content = style({
+  maxWidth: "1200px",
+  margin: "0 auto",
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
-  padding: `0 ${space.sm}`,
+  padding: `${space.sm}`,
 });
 
 export const toggleBtn = style({

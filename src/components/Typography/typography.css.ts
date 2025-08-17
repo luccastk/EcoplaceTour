@@ -53,7 +53,6 @@ export const typographyStyle = recipe({
       },
       justify: {
         textAlign: "justify",
-        hyphens: "auto",
       },
     },
     color: {
@@ -70,6 +69,12 @@ export const typographyStyle = recipe({
         color: palette.text,
       },
     },
+  },
+  defaultVariants: {
+    variant: "p",
+    color: "text",
+    align: "start",
+    w: "regular",
   },
 });
 

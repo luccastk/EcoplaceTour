@@ -1,31 +1,31 @@
 import { BsArrowRightShort } from "react-icons/bs";
 import { FiArrowDownRight } from "react-icons/fi";
 import { IoBookOutline, IoPeopleSharp } from "react-icons/io5";
-import { container } from "../../theme/global.css";
+import { container, sectionHeader } from "../../theme/global.css";
 import { palette } from "../../theme/palettes";
 import type { CardHero } from "../../types/card-hero";
+import { Card } from "../Card/Card";
 import { Link } from "../Link/Link";
 import { Stack } from "../Stack/Stack";
-import { groupBtn, heroContainer } from "./hero.css";
-import { HeroCard } from "./HeroCard/HeroCard";
-import { HeroTitle } from "./HeroTitle/HeroTitle";
+import { Typography } from "../Typography/Typography";
+import { background, groupBtn } from "./hero.css";
 
 const cards: CardHero[] = [
   {
     id: 0,
-    icon: <IoBookOutline color={palette.warning} />,
+    icon: <IoBookOutline color={palette.warning} size={"70px"} />,
     title: "Educação Prática",
     description: "Aprendizado real dentro das empresas",
   },
   {
     id: 1,
-    icon: <IoPeopleSharp color={palette.warning} />,
+    icon: <IoPeopleSharp color={palette.warning} size={"70px"} />,
     title: "Networking",
     description: "Conexões valiosas para o futuro",
   },
   {
     id: 2,
-    icon: <FiArrowDownRight color={palette.warning} />,
+    icon: <FiArrowDownRight color={palette.warning} size={"70px"} />,
     title: "Inspiração",
     description: "Motivação para carreiras futuras",
   },
@@ -33,9 +33,30 @@ const cards: CardHero[] = [
 
 export function Hero() {
   return (
-    <section className={heroContainer}>
+    <section className={background}>
       <div className={container}>
-        <HeroTitle />
+        <div className={sectionHeader}>
+          <Typography
+            tag="h1"
+            variant="h1"
+            w="bold"
+            color="white"
+            align="center"
+          >
+            Visitas Técnicas que{" "}
+            <span style={{ color: palette.warning }}>Transformam</span>
+          </Typography>
+          <Typography
+            tag="h2"
+            variant="h4"
+            w="semiBold"
+            color="white"
+            align="center"
+          >
+            Conectamos escolas às melhores empresas do país para experiências
+            educacionais únicas e inspiradoras
+          </Typography>
+        </div>
         <div className={groupBtn}>
           <Link
             icon={<BsArrowRightShort size={"1.125rem"} />}
@@ -50,12 +71,13 @@ export function Hero() {
         </div>
         <Stack>
           {cards.map((card) => (
-            <HeroCard
-              key={card.id}
-              icon={card.icon}
-              title={card.title}
-              description={card.description}
-            />
+            <Card key={card.id} variant="blur">
+              {card.icon}
+              <Card.Title color="white">{card.title}</Card.Title>
+              <Card.Description color="white">
+                {card.description}
+              </Card.Description>
+            </Card>
           ))}
         </Stack>
       </div>

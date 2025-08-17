@@ -1,5 +1,5 @@
 import { globalStyle, style } from "@vanilla-extract/css";
-import { space } from "./spaces";
+import { gap, space } from "./spaces";
 
 globalStyle("*, *::before, *::after", {
   boxSizing: "border-box",
@@ -31,10 +31,18 @@ globalStyle("p, h1, h2, h3, h4, h5", {
 export const container = style({
   maxWidth: "1200px",
   margin: "0 auto",
-  padding: `1rem 0`,
+  padding: `${space.xl} ${space.md}`,
   "@media": {
     "screen and (max-width: 1000px)": {
-      padding: `${space.xs} ${space.sm}`,
+      padding: `${space.lg} ${space.sm}`,
     },
   },
+});
+
+export const sectionHeader = style({
+  maxWidth: "700px",
+  display: "flex",
+  flexDirection: "column",
+  margin: "0 auto 2rem auto",
+  gap: gap.sm,
 });

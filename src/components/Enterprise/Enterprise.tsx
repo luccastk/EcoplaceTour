@@ -1,24 +1,37 @@
 import { MdArrowForwardIos } from "react-icons/md";
-import { container } from "../../theme/global.css";
+import { container, sectionHeader } from "../../theme/global.css";
 import { Link } from "../Link/Link";
-import { SectionHead } from "../SectionHead/SectionHead";
-import { enterpriseContainer } from "./enterprise.css";
+import { Typography } from "../Typography/Typography";
+import { background } from "./enterprise.css";
 
 export function Enterprise() {
   return (
-    <section className={enterpriseContainer}>
+    <section className={background}>
       <div className={container}>
-        <SectionHead
-          title={"Empresas Parceiras"}
-          subtitle={
-            "Explore as oportunidades de visitas técnicas nas maiores e mais inovadoras empresas do Brasil. Cada experiência é cuidadosamente planejada para maximizar o aprendizado."
-          }
-          white
-        />
+        <div className={sectionHeader}>
+          <Typography
+            tag="h2"
+            variant="h2"
+            w="bold"
+            align="center"
+            color="white"
+          >
+            Empresas Parceiras
+          </Typography>
+          <Typography tag="h3" variant="h4" color="white" align="center">
+            Explore as oportunidades de visitas técnicas nas maiores e mais
+            inovadoras empresas do Brasil. Cada experiência é cuidadosamente
+            planejada para maximizar o aprendizado.
+          </Typography>
+        </div>
+        <Link
+          icon={<MdArrowForwardIos />}
+          variant="green"
+          path={"/enterprises"}
+        >
+          VER TODOS
+        </Link>
       </div>
-      <Link icon={<MdArrowForwardIos />} variant="green" path={"/enterprises"}>
-        VER TODOS
-      </Link>
     </section>
   );
 }

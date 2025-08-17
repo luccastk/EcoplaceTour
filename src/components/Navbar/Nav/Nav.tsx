@@ -1,7 +1,7 @@
-import { nav } from "./headerNav.css";
+import { nav } from "./nav.css";
 
 type HeaderNavProps = React.PropsWithChildren;
 
-export function HeaderNav({ children }: HeaderNavProps) {
+export function Nav({ children }: HeaderNavProps) {
   return <nav className={nav}>{children}</nav>;
 }

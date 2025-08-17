@@ -2,22 +2,17 @@ import { FaSchool } from "react-icons/fa";
 import { FiShield } from "react-icons/fi";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 import { IoSchoolOutline } from "react-icons/io5";
-import { container } from "../../theme/global.css";
+import { container, sectionHeader } from "../../theme/global.css";
 import { palette } from "../../theme/palettes";
 import type { CardService } from "../../types/card-service";
 import { Card } from "../Card/Card";
-import { CardDescription } from "../Card/CardDescription/CardDescription";
-import { CardTag } from "../Card/CardTag/CardTag";
-import { CardTitle } from "../Card/CardTitle/CardTitle";
-import { Icon } from "../Icon/Icon";
-import { SectionHead } from "../SectionHead/SectionHead";
 import { Stack } from "../Stack/Stack";
-import { containerService, tags } from "./service.css";
+import { Typography } from "../Typography/Typography";
 
 const cards: CardService[] = [
   {
     id: 0,
-    icon: <IoSchoolOutline size={"90px"} color={palette.primary} />,
+    icon: <IoSchoolOutline size={"70px"} color={palette.primary} />,
     title: "Experiências Educacionais",
     description:
       "Visitas técnicas planejadas por especialistas em educação para maximizar o aprendizado prático dos estudantes.",
@@ -41,7 +36,7 @@ const cards: CardService[] = [
   },
   {
     id: 1,
-    icon: <FaSchool size={"90px"} color={palette.primary} />,
+    icon: <FaSchool size={"70px"} color={palette.primary} />,
     title: "Visita Pedagógica",
     description:
       "Experiência educativa guiada, conectando teoria e prática de forma dinâmica e organizada.",
@@ -65,7 +60,7 @@ const cards: CardService[] = [
   },
   {
     id: 2,
-    icon: <FiShield size={"90px"} color={palette.primary} />,
+    icon: <FiShield size={"70px"} color={palette.primary} />,
     title: "Segurança Garantida",
     description:
       "Todos os procedimentos de segurança são rigorosamente seguidos, com equipamentos de proteção e acompanhamento profissional.",
@@ -91,29 +86,31 @@ const cards: CardService[] = [
 
 export function Service() {
   return (
-    <section className={containerService}>
-      <div className={container}>
-        <SectionHead
-          title={"Nossos Serviços"}
-          subtitle={
-            "Oferecemos experiências educacionais completas que conectam teoria e  prática, proporcionando aos estudantes uma visão real do mercado de  trabalho."
-          }
-        />
-        <Stack>
-          {cards.map((item) => (
-            <Card key={item.id}>
-              <Icon>{item.icon}</Icon>
-              <CardTitle>{item.title}</CardTitle>
-              <CardDescription>{item.description}</CardDescription>
-              <div className={tags}>
-                {item.tags.map((tag) => (
-                  <CardTag key={tag.id} icon={tag.icon} text={tag.label} />
-                ))}
-              </div>
-            </Card>
-          ))}
-        </Stack>
+    <section className={container}>
+      <div className={sectionHeader}>
+        <Typography tag="h2" variant="h2" w="bold" align="center">
+          Nossos Serviços
+        </Typography>
+        <Typography tag="h3" variant="h4" color="light-green" align="center">
+        Oferecemos experiências educacionais completas que conectam teoria e
+          prática, proporcionando aos estudantes uma visão real do mercado de
+          trabalho.
+        </Typography>
       </div>
+      <Stack>
+        {cards.map((item) => (
+          <Card key={item.id}>
+            {item.icon}
+            <Card.Title>{item.title}</Card.Title>
+            <Card.Description>{item.description}</Card.Description>
+            <Card.Tags>
+              {item.tags.map((tag) => (
+                <Card.Tag key={tag.id} icon={tag.icon} text={tag.label} />
+              ))}
+            </Card.Tags>
+          </Card>
+        ))}
+      </Stack>
     </section>
   );
 }

@@ -3,7 +3,7 @@ import { style } from "@vanilla-extract/css";
 import ImgHero from "../../assets/imgs/hero-image.jpg";
 import { gap, space } from "../../theme/spaces";
 
-export const heroContainer = style({
+export const background = style({
   padding: `${space.lg} 0`,
   backgroundImage: `url(${ImgHero})`,
   backgroundRepeat: "no-repeat",
@@ -17,5 +17,4 @@ export const groupBtn = style({
   flexDirection: "column",
   alignItems: "center",
   gap: gap.xs,
-  marginTop: space.md,
 });

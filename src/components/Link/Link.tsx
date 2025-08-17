@@ -2,7 +2,6 @@ import clsx from "clsx";
 import type React from "react";
 import type { ReactNode } from "react";
 import { Link as RouterLink, useLocation } from "react-router-dom";
-import { Icon } from "../Icon/Icon";
 import {
   content,
   link,
@@ -43,7 +42,7 @@ export function Link({
       )}
     >
       {children}
-      <Icon size="xs">{icon}</Icon>
+      {icon}
     </RouterLink>
   );
 }
