@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  ----default-font-family: "Satoshi", "sans-serif";
+
+  --color-greenPrimary: oklch(0.4904 0.1142 156.04);
+  --color-secundary: "#BAD94A";
+  --color-background: "#F0F3F1";
+  --color-disabled: "#6C757D";
+  --color-text: "#333333";
+  --color-border: "#DFEEE2";
+  --color-warning: "#F2B705";
+  --color-white: "#ffffff";
+  --color-florest: "#6C9380";
+}

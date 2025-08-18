@@ -44,7 +44,7 @@ export const link = recipe({
         fontSize: size.xs,
       },
       gradient: {
-        background: `linear-gradient(99deg,${palette.primary}, ${palette.secondary})`,
+        background: `linear-gradient(100deg,${palette.primary}, ${palette.secondary})`,
         transform: "scale(.95)",
         transition: "transform .3s ease",
         selectors: {

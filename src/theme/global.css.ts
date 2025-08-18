@@ -6,14 +6,18 @@ globalStyle("*, *::before, *::after", {
 });
 
 globalStyle("body", {
-  margin: 0,
-  fontFamily: "Helvetica, Arial, sans-serif;",
 });
 
 globalStyle("a", {
   textDecoration: "none",
   color: "inherit",
   cursor: "pointer",
+});
+
+globalStyle("textarea", {
+  border: "none",
+  resize: "none",
+  outline: "none",
 });
 
 globalStyle("input", {
@@ -28,11 +32,7 @@ globalStyle("button", {
   background: "inherit",
 });
 
-globalStyle("p, h1, h2, h3, h4, h5", {
-  font: "inherit",
-  margin: 0,
-  padding: 0,
-});
+globalStyle("p, h1, h2, h3, h4, h5", {});
 
 export const container = style({
   maxWidth: "1200px",

@@ -3,6 +3,7 @@ import { Button } from "./Button/Button";
 import { content } from "./form.css";
 import { Input } from "./Input/Input";
 import { Inputs } from "./Inputs/Inputs";
+import { Textarea } from "./Textarea/Textarea";
 import { Title } from "./Title/Title";
 
 type FormProps = React.PropsWithChildren<{
@@ -29,4 +30,5 @@ export function Form({ onSubmit, children }: FormProps) {
 Form.Title = Title;
 Form.Inputs = Inputs;
 Form.Input = Input;
+Form.Textarea = Textarea;
 Form.Button = Button;

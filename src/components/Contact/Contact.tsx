@@ -7,9 +7,9 @@ import { radii } from "../../theme/radii";
 import { gap, space } from "../../theme/spaces";
 import type { ContactItem } from "../../types/contact-item";
 import { Box } from "../Box/Box";
+import { Form } from "../Form/Form";
 import { Typography } from "../Typography/Typography";
 import { background } from "./contact.css";
-import { Form } from "../Form/Form";
 
 const contactItems: ContactItem[] = [
   {
@@ -121,14 +121,23 @@ export function Contact() {
           <Box border>
             <Form>
               <Form.Title>Solicitar um Orçamento</Form.Title>
-              <Form.Inputs>
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "1fr 1fr",
+                  rowGap: gap.sm,
+                  columnGap: gap.sm,
+                }}
+              >
                 <Form.Input label="Nome" name="name" />
                 <Form.Input label="Email" name="name" />
                 <Form.Input label="Escola" name="name" />
                 <Form.Input label="Telefone" name="name" />
                 <Form.Input label="Numero de Estudantes" name="name" />
                 <Form.Input type="date" label="Data Preferencial" name="name" />
-              </Form.Inputs>
+              </div>
+              <Form.Input label="Empresas de Interesse" name="enterprises" />
+              <Form.Textarea label="Mensagem" name="message" />
               <Form.Button>Submit</Form.Button>
             </Form>
           </Box>
