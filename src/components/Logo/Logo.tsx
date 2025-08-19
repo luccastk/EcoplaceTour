@@ -8,7 +8,7 @@ export function Logo() {
     <img
       src={LogoSVG}
       alt="Logo"
-      className="h-14 cursor-pointer"
+      className="h-14 w-14 cursor-pointer"
       onClick={() => navigate("/")}
     />
   );

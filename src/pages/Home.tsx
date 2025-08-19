@@ -1,9 +1,11 @@
-import { Hero } from "../components/Hero/Hero";
+import { Hero } from "../components/Hero";
+import { Service } from "../components/Service/Service";
 
 export function Home() {
   return (
-    <div className="min-h-screen">
+    <>
       <Hero />
-    </div>
+      <Service />
+    </>
   );
 }
