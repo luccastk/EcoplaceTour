@@ -8,9 +8,8 @@ export function Logo() {
     <img
       src={LogoSVG}
       alt="Logo"
-      width={"50px"}
+      className="h-14 cursor-pointer"
       onClick={() => navigate("/")}
-      style={{ cursor: "pointer" }}
     />
   );
 }

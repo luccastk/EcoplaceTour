@@ -1,38 +1,5 @@
-import { globalStyle, style } from "@vanilla-extract/css";
+import { style } from "@vanilla-extract/css";
 import { gap, space } from "./spaces";
-
-globalStyle("*, *::before, *::after", {
-  boxSizing: "border-box",
-});
-
-globalStyle("body", {
-});
-
-globalStyle("a", {
-  textDecoration: "none",
-  color: "inherit",
-  cursor: "pointer",
-});
-
-globalStyle("textarea", {
-  border: "none",
-  resize: "none",
-  outline: "none",
-});
-
-globalStyle("input", {
-  border: "none",
-  padding: 0,
-  outline: "none",
-});
-
-globalStyle("button", {
-  border: "none",
-  padding: 0,
-  background: "inherit",
-});
-
-globalStyle("p, h1, h2, h3, h4, h5", {});
 
 export const container = style({
   maxWidth: "1200px",

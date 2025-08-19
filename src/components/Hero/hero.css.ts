@@ -1,11 +1,9 @@
 import { style } from "@vanilla-extract/css";
 
-import ImgHero from "../../assets/imgs/hero-image.jpg";
 import { gap, space } from "../../theme/spaces";
 
 export const background = style({
   padding: `${space.lg} 0`,
-  backgroundImage: `url(${ImgHero})`,
   backgroundRepeat: "no-repeat",
   backgroundSize: "cover",
   backgroundPosition: "center",

@@ -1,14 +1,14 @@
 import { BsArrowRightShort } from "react-icons/bs";
 import { FiArrowDownRight } from "react-icons/fi";
 import { IoBookOutline, IoPeopleSharp } from "react-icons/io5";
-import { container, sectionHeader } from "../../theme/global.css";
+import { sectionHeader } from "../../theme/global.css";
 import { palette } from "../../theme/palettes";
 import type { CardHero } from "../../types/card-hero";
 import { Card } from "../Card/Card";
 import { Link } from "../Link/Link";
 import { Stack } from "../Stack/Stack";
 import { Typography } from "../Typography/Typography";
-import { background, groupBtn } from "./hero.css";
+import { groupBtn } from "./hero.css";
 
 const cards: CardHero[] = [
   {
@@ -33,8 +33,8 @@ const cards: CardHero[] = [
 
 export function Hero() {
   return (
-    <section className={background}>
-      <div className={container}>
+    <section className="bg-[url(./images/hero-image.jpg)] bg-cover bg-no-repeat bg-center">
+      <div className="container mx-auto py-14">
         <div className={sectionHeader}>
           <Typography
             tag="h1"

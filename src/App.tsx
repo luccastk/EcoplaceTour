@@ -1,21 +1,14 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Navbar } from "./components/Navbar/Navbar";
-import {
-  About,
-  Contact,
-  Enterprises,
-  Home,
-  NotFound,
-  Partnership,
-} from "./pages";
-import "./theme/global.css";
 import { Footer } from "./components/Footer/Footer";
+import { Navbar } from "./components/Navbar";
+import { About, Contact, Enterprises, NotFound, Partnership } from "./pages";
+import { Home } from "./pages/Home";
 
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <main style={{ paddingTop: "90px" }}>
+      <main className="pt-[86px]">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
