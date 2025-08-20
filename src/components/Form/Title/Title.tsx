@@ -1,5 +1,5 @@
 import type React from "react";
-import { Typography } from "../../Typography/Typography";
+import { Typography } from "../../Typography";
 
 export function Title({ children }: React.PropsWithChildren) {
   return (

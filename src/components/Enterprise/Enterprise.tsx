@@ -1,7 +1,7 @@
 import { MdArrowForwardIos } from "react-icons/md";
 import { container, sectionHeader } from "../../theme/global.css";
 import { Link } from "../Link/Link";
-import { Typography } from "../Typography/Typography";
+import { Typography } from "../Typography";
 import { background } from "./enterprise.css";
 
 export function Enterprise() {

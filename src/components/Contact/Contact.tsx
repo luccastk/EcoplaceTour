@@ -8,7 +8,7 @@ import { gap, space } from "../../theme/spaces";
 import type { ContactItem } from "../../types/contact-item";
 import { Box } from "../Box/Box";
 import { Form } from "../Form/Form";
-import { Typography } from "../Typography/Typography";
+import { Typography } from "../Typography";
 import { background } from "./contact.css";
 
 const contactItems: ContactItem[] = [

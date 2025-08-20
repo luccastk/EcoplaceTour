@@ -1,31 +1,7 @@
 import { BsArrowRightShort } from "react-icons/bs";
-import { FiArrowDownRight } from "react-icons/fi";
-import { IoBookOutline, IoPeopleSharp } from "react-icons/io5";
-import { palette } from "../theme/palettes";
-import type { CardHero } from "../types/card-hero";
-import { Link } from "./Link/Link";
-import { Typography } from "./Typography/Typography";
-
-const cards: CardHero[] = [
-  {
-    id: 0,
-    icon: <IoBookOutline color={palette.warning} size={"70px"} />,
-    title: "Educação Prática",
-    description: "Aprendizado real dentro das empresas",
-  },
-  {
-    id: 1,
-    icon: <IoPeopleSharp color={palette.warning} size={"70px"} />,
-    title: "Networking",
-    description: "Conexões valiosas para o futuro",
-  },
-  {
-    id: 2,
-    icon: <FiArrowDownRight color={palette.warning} size={"70px"} />,
-    title: "Inspiração",
-    description: "Motivação para carreiras futuras",
-  },
-];
+import { hero } from "../types/hero";
+import Button from "./Button";
+import { Typography } from "./Typography";
 
 export function Hero() {
   return (
@@ -38,25 +14,22 @@ export function Hero() {
           Conectamos escolas às melhores empresas do país para experiências
           educacionais únicas e inspiradoras
         </Typography>
-        <div className="flex flex-col items-center space-y-2 my-4">
-          <Link
-            icon={<BsArrowRightShort size={"1.125rem"} />}
-            path="/badge"
-            variant="gradient"
-          >
-            Agendar Visita
-          </Link>
-          <Link path="/enterprises" variant="outlined">
-            Ver Empresas
-          </Link>
+        <div className="flex flex-col items-center space-y-2 my-6">
+          <Button link href="/badge">
+            <div className="flex items-center gap-3">
+              Agendar Visita
+              <BsArrowRightShort size="1.5rem" />
+            </div>
+          </Button>
+          <Button link href="/enterprises" variant="tertiary">Ver Empresas</Button>
         </div>
         <div className=" grid grid-cols-1 md:grid-cols-3 gap-4">
-          {cards.map((card) => (
+          {hero.map((card) => (
             <div
               key={card.id}
               className="flex flex-col items-center space-y-3 bg-background/20 rounded-md p-6"
             >
-              {card.icon}
+              <card.icon className="h-20 w-20 text-warning" />
               <Typography
                 element="h3"
                 variant="white"

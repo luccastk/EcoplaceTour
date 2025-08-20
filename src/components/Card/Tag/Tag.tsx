@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Typography } from "../../Typography/Typography";
+import { Typography } from "../../Typography";
 import { tag } from "./Tag.css";
 
 type CardTagsProps = {

@@ -43,7 +43,7 @@ export function Typography({
   const Component = element || "p";
   return (
     <Component
-      className={`${variantClassMap.variant[variant]} ${variantClassMap.size[size]} ${variantClassMap.weight[weight]} ${className}`}
+      className={`font-primary ${variantClassMap.variant[variant]} ${variantClassMap.size[size]} ${variantClassMap.weight[weight]} ${className}`}
       {...rest}
     />
   );

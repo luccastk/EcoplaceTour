@@ -3,7 +3,8 @@ import type { MenuItem } from "../types/menu-item";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link, useLocation } from "react-router-dom";
-import { Logo } from "./Logo/Logo";
+import { Logo } from "./Logo";
+import Button from "./Button";
 
 const links: MenuItem[] = [
   {
@@ -51,7 +52,7 @@ export function Navbar() {
                   location.pathname === link.path
                     ? "text-primary after:w-full"
                     : ""
-                } relative hover:text-primary transition-all duration-300
+                } font-primary relative hover:text-primary transition-all duration-300
          after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 after:w-0 hover:after:w-full`}
               >
                 {link.label}
@@ -60,12 +61,9 @@ export function Navbar() {
           </nav>
 
           <div className="hidden md:flex">
-            <Link
-              to="/badge"
-              className="bg-gradient-to-r from-primary to-secundary px-5 py-3 rounded-md text-white font-bold transition-all duration-300 hover:scale-105"
-            >
+            <Button link href="/badge">
               Solicitar Orçamento
-            </Link>
+            </Button>
           </div>
           <div className="md:hidden">
             <GiHamburgerMenu
