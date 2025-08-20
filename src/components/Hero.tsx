@@ -1,33 +1,36 @@
 import { BsArrowRightShort } from "react-icons/bs";
+import { container } from "../styles/container";
 import { hero } from "../types/hero";
-import Button from "./Button";
-import { Typography } from "./Typography";
+import { Button } from "./ui";
+import { Typography } from "./ui/Typography";
 
 export function Hero() {
   return (
-    <section className="pt-[86px] bg-[url(./images/hero-image.jpg)] bg-cover bg-no-repeat bg-center">
-      <div className="max-w-5xl mx-auto p-5 md:py-14">
+    <section className="relative pt-[86px] bg-[url(./images/hero-image.jpg)] bg-cover bg-no-repeat bg-center bg-black/40 bg-blend-overlay">
+      <div className={container}>
         <Typography element="h1" variant="white" size="title1" weight="bold">
           Visitas Técnicas que <span className="text-warning">Transformam</span>
         </Typography>
-        <Typography element="h2" variant="white" size="xl" weight="bold">
+        <Typography element="h2" variant="white" size="xl">
           Conectamos escolas às melhores empresas do país para experiências
           educacionais únicas e inspiradoras
         </Typography>
-        <div className="flex flex-col items-center space-y-2 my-6">
+        <div className="flex flex-col items-center space-y-3 my-8">
           <Button link href="/badge">
-            <div className="flex items-center gap-3">
+            <div className="flex">
               Agendar Visita
-              <BsArrowRightShort size="1.5rem" />
+              <BsArrowRightShort size="1.5rem" className="ml-4" />
             </div>
           </Button>
-          <Button link href="/enterprises" variant="tertiary">Ver Empresas</Button>
+          <Button link href="/enterprises" variant="tertiary">
+            Ver Empresas
+          </Button>
         </div>
         <div className=" grid grid-cols-1 md:grid-cols-3 gap-4">
           {hero.map((card) => (
             <div
               key={card.id}
-              className="flex flex-col items-center space-y-3 bg-background/20 rounded-md p-6"
+              className="flex flex-col items-center space-y-3 bg-background/20 rounded-lg p-6"
             >
               <card.icon className="h-20 w-20 text-warning" />
               <Typography

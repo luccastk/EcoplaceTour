@@ -4,7 +4,7 @@ import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link, useLocation } from "react-router-dom";
 import { Logo } from "./Logo";
-import Button from "./Button";
+import { Button } from "./ui";
 
 const links: MenuItem[] = [
   {

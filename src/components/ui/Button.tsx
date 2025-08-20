@@ -26,7 +26,11 @@ const variantClassMap = {
   },
 };
 
-const Button = ({ variant = "primary", className, ...rest }: ButtonProps) => {
+export const Button = ({
+  variant = "primary",
+  className,
+  ...rest
+}: ButtonProps) => {
   return (
     <ButtonOrLink
       className={`cursor-pointer text-white font-bold py-3 px-4 rounded-md ${variantClassMap.variant[variant]} ${className}`}
@@ -34,5 +38,3 @@ const Button = ({ variant = "primary", className, ...rest }: ButtonProps) => {
     />
   );
 };
-
-export default Button;

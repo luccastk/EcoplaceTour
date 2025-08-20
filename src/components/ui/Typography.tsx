@@ -32,14 +32,14 @@ const variantClassMap = {
   },
 };
 
-export function Typography({
+export const Typography = ({
   element,
   variant = "primary",
   size = "md",
   weight = "regular",
   className,
   ...rest
-}: TypographyProps) {
+}: TypographyProps) => {
   const Component = element || "p";
   return (
     <Component
@@ -47,4 +47,4 @@ export function Typography({
       {...rest}
     />
   );
-}
+};
