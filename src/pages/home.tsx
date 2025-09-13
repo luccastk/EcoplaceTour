@@ -1,3 +1,9 @@
+import { Sections } from "../components/sections";
+
 export function Home() {
-  return <div>Home</div>;
+  return (
+    <div>
+      <Sections.Hero />
+    </div>
+  );
 }

@@ -1,4 +1,4 @@
-@import url("https://cdn.jsdelivr.net/npm/@vercel/fonts/geist-sans/index.css");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss";
 
 @theme inline {
@@ -10,11 +10,11 @@
   --color-border: var(--color-border);
   --color-warning: var(--color-warning);
   --color-florest: var(--color-florest);
-  --font-sans: var(--font-family);
+  --font-sans: var(--font-sans);
 }
 
 :root {
-  --font-family: "Geist Sans", sans-serif;
+  --font-sans: "Rubik", system-ui, sans-serif;
 
   --color-primary: oklch(0.45 0.15 145);
   --color-secundary: oklch(0.8 0.15 100);
@@ -24,4 +24,44 @@
   --color-border: oklch(0.9 0.02 120);
   --color-warning: oklch(0.75 0.15 85);
   --color-florest: oklch(0.6 0.05 150);
+
+  /* Design system tokens */
+  --radius: 0.5rem;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@layer base {
+  body {
+    @apply bg-background;
+  }
+
+  h1 {
+    @apply text-4xl font-sans;
+  }
+
+  h2 {
+    @apply text-3xl font-sans;
+  }
+
+  h3 {
+    @apply text-2xl font-sans;
+  }
+
+  h4 {
+    @apply text-xl font-sans;
+  }
+
+  h5 {
+    @apply text-lg font-sans;
+  }
+
+  h6 {
+    @apply text-base font-sans;
+  }
+
+  p {
+    @apply text-base font-sans;
+  }
 }
