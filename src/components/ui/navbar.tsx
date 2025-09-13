@@ -29,7 +29,7 @@ function Navbar() {
         isScrolled && "bg-florest/10"
       )}
     >
-      <img src={logo} alt="Logo" className="w-15 h-15" />
+      <img src={logo} alt="Logo" className="w-20 h-20" />
 
       <nav aria-label="Navbar" className="hidden md:block">
         <ul className="flex items-center justify-center gap-8 min-h-[2.5rem]">
