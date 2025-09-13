@@ -1,0 +1,27 @@
+@import url("https://cdn.jsdelivr.net/npm/@vercel/fonts/geist-sans/index.css");
+@import "tailwindcss";
+
+@theme inline {
+  --color-primary: var(--color-primary);
+  --color-secundary: var(--color-secundary);
+  --color-background: var(--color-background);
+  --color-disabled: var(--color-disabled);
+  --color-text: var(--color-text);
+  --color-border: var(--color-border);
+  --color-warning: var(--color-warning);
+  --color-florest: var(--color-florest);
+  --font-sans: var(--font-family);
+}
+
+:root {
+  --font-family: "Geist Sans", sans-serif;
+
+  --color-primary: oklch(0.45 0.15 145);
+  --color-secundary: oklch(0.8 0.15 100);
+  --color-background: oklch(0.95 0.01 120);
+  --color-disabled: oklch(0.5 0.01 0);
+  --color-text: oklch(0.25 0.01 0);
+  --color-border: oklch(0.9 0.02 120);
+  --color-warning: oklch(0.75 0.15 85);
+  --color-florest: oklch(0.6 0.05 150);
+}

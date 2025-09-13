@@ -1,40 +1,43 @@
 import React from "react";
+import { cva } from "class-variance-authority";
+import { cn } from "../../lib/utils";
+import { Slot } from "@radix-ui/react-slot";
 
-export type ButtonProps = {
-  variant?: "primary" | "secundary" | "tertiary";
+interface ButtonProps extends React.ComponentProps<"button"> {
+  variant?: "default" | "secundary" | "outline" | "ghost" | "link";
   link?: boolean;
-} & (
-  | React.ButtonHTMLAttributes<HTMLButtonElement>
-  | React.AnchorHTMLAttributes<HTMLAnchorElement>
+  asChild?: boolean;
+}
+
+const buttonVariants = cva(
+  "inline-flex cursor-pointer items-center gap-2 whitespace-nowrap rounded-md text-sm transition-all disabled:opacity-50 disabled:pointer-events-none [&_svg]:pointer-events-none shrink-0 [&_svg]:size-4 [&_svg]:shrink-0 focus-visible:border-ringn focus-visible:ring-1 focus-visible:ring-ring arial-invalid:ring-red-500",
+  {
+    variants: {
+      variant: {
+        default:
+          "bg-gradient-to-r from-primary to-secundary transition-all hover:scale-105",
+        secundary: "bg-primary transition-all hover:bg-primary/80",
+        outline: "bg-white/20 border transition-all hover:bg-white/40",
+        ghost: "bg-white/20 border transition-all hover:bg-white/40",
+        link: "text-primary underline-offset-4 hover:underline",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+    },
+  }
 );
 
-const ButtonOrLink = (props: ButtonProps) => {
-  if (props.link) {
-    return <a {...(props as React.AnchorHTMLAttributes<HTMLAnchorElement>)} />;
-  }
-  return (
-    <button {...(props as React.ButtonHTMLAttributes<HTMLButtonElement>)} />
-  );
-};
-
-const variantClassMap = {
-  variant: {
-    primary:
-      "bg-gradient-to-r from-primary to-secundary transition-all hover:scale-105",
-    secundary: "bg-primary transition-all hover:bg-primary/80",
-    tertiary: "bg-white/20 border transition-all hover:bg-white/40",
-  },
-};
-
-export const Button = ({
-  variant = "primary",
+const Button = ({
+  variant = "default",
   className,
+  asChild = false,
   ...rest
-}: ButtonProps) => {
+}: Readonly<ButtonProps>) => {
+  const Comp = asChild ? Slot : "button";
   return (
-    <ButtonOrLink
-      className={`cursor-pointer text-white font-bold py-3 px-4 rounded-md ${variantClassMap.variant[variant]} ${className}`}
-      {...rest}
-    />
+    <Comp className={cn(buttonVariants({ variant }), className)} {...rest} />
   );
 };
+
+export { Button };
