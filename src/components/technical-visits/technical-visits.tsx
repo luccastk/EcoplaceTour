@@ -21,9 +21,9 @@ export function TechnicalVisits() {
 
   return (
     <section className="py-16 bg-background">
-      <div className="pr-20">
+      <div className="pr-20 pl-20 md:pl-0">
         <div className="flex flex-row gap-4 mb-12">
-          <div className="flex flex-row items-end gap-2 ml-20">
+          <div className="hidden md:flex flex-row items-end gap-2 ml-20">
             <Button variant="secondary" size="icon" onClick={scrollPrev}>
               <ChevronLeft className="w-5 h-5" />
             </Button>
@@ -32,7 +32,7 @@ export function TechnicalVisits() {
             </Button>
           </div>
 
-          <div className="flex flex-col gap-2 ml-auto">
+          <div className="flex flex-col gap-2 ml-auto pl-20">
             <h2 className="relative pb-4 text-3xl font-bold text-gray-900 before:content-[''] before:absolute before:right-0 before:bottom-0 before:w-1/4 before:h-[2px] before:bg-primary text-right">
               Visitas Técnicas
             </h2>
@@ -56,7 +56,7 @@ export function TechnicalVisits() {
                     <img
                       src={visit.image}
                       alt={visit.title}
-                      className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                      className="w-full h-full object-cover transition-transform duration-300"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   </div>
@@ -101,6 +101,12 @@ export function TechnicalVisits() {
               </div>
             ))}
           </div>
+        </div>
+
+        <div className="text-center mt-8 md:pl-20">
+          <Button variant="outline" size="lg" className="w-full md:w-auto">
+            Ver Todas as Visitas Técnicas
+          </Button>
         </div>
       </div>
     </section>

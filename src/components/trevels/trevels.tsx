@@ -29,13 +29,13 @@ export function Trevels() {
             <h2 className="relative pb-4 text-3xl font-bold text-gray-900 before:content-[''] before:absolute before:left-0 before:bottom-0 before:w-1/4 before:h-[2px] before:bg-primary">
               Viagens Populares
             </h2>
-            <p className="text-gray-600 text-lg mt-2">
+            <p className="text-gray-600 text-lg mt-2 pr-20 ">
               Descubra as viagens mais populares e garanta sua participação em
               uma das melhores experiências de viagem e aprendizado.
             </p>
           </div>
 
-          <div className="flex flex-row gap-2 items-end w-full justify-end mr-20">
+          <div className="hidden md:flex flex-row gap-2 items-end w-full justify-end mr-20">
             <Button variant="secondary" size="icon" onClick={scrollPrev}>
               <ChevronLeft className="w-5 h-5" />
             </Button>
@@ -75,8 +75,8 @@ export function Trevels() {
           </div>
         </div>
 
-        <div className="text-center mt-8">
-          <Button variant="outline" size="lg">
+        <div className="mt-8 text-center pr-20">
+          <Button variant="outline" size="lg" className="w-full md:w-auto">
             Ver Todas as Viagens
           </Button>
         </div>
