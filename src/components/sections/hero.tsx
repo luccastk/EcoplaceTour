@@ -6,13 +6,10 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { HeroItems } from "../hero";
 import { Button } from "../ui";
 import { cn } from "../../lib/utils";
-import { useScreenDetector } from "../../hooks/use-screen-detector";
 
 export function Hero() {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [selectedSubheadline, setSelectedSubheadline] = useState(0);
-
-  const { isDesktop } = useScreenDetector();
 
   const prefersReducedMotion =
     typeof window !== "undefined" &&
@@ -32,24 +29,52 @@ export function Hero() {
     [prefersReducedMotion]
   );
 
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, plugins);
+  const [emblaRefMobile, emblaApiMobile] = useEmblaCarousel(
+    { loop: true },
+    plugins
+  );
+  const [emblaRefDesktop, emblaApiDesktop] = useEmblaCarousel(
+    { loop: true },
+    plugins
+  );
 
-  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
-  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+  const scrollPrev = useCallback(() => {
+    emblaApiMobile?.scrollPrev();
+    emblaApiDesktop?.scrollPrev();
+  }, [emblaApiMobile, emblaApiDesktop]);
 
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return;
-    setSelectedIndex(emblaApi.selectedScrollSnap());
-  }, [emblaApi]);
+  const scrollNext = useCallback(() => {
+    emblaApiMobile?.scrollNext();
+    emblaApiDesktop?.scrollNext();
+  }, [emblaApiMobile, emblaApiDesktop]);
+
+  const onSelectMobile = useCallback(() => {
+    if (!emblaApiMobile) return;
+    setSelectedIndex(emblaApiMobile.selectedScrollSnap());
+  }, [emblaApiMobile]);
+
+  const onSelectDesktop = useCallback(() => {
+    if (!emblaApiDesktop) return;
+    setSelectedIndex(emblaApiDesktop.selectedScrollSnap());
+  }, [emblaApiDesktop]);
 
   useEffect(() => {
-    if (!emblaApi) return;
-    onSelect();
-    emblaApi.on("select", onSelect);
+    if (!emblaApiMobile) return;
+    onSelectMobile();
+    emblaApiMobile.on("select", onSelectMobile);
     return () => {
-      emblaApi.off("select", onSelect);
+      emblaApiMobile.off("select", onSelectMobile);
     };
-  }, [emblaApi, onSelect]);
+  }, [emblaApiMobile, onSelectMobile]);
+
+  useEffect(() => {
+    if (!emblaApiDesktop) return;
+    onSelectDesktop();
+    emblaApiDesktop.on("select", onSelectDesktop);
+    return () => {
+      emblaApiDesktop.off("select", onSelectDesktop);
+    };
+  }, [emblaApiDesktop, onSelectDesktop]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -72,7 +97,7 @@ export function Hero() {
         <div
           id={carouselId}
           className="absolute inset-0 overflow-hidden"
-          ref={emblaRef}
+          ref={emblaRefMobile}
           aria-live="polite"
         >
           <div className="flex">
@@ -82,38 +107,87 @@ export function Hero() {
                 className="flex-[0_0_100%] min-w-0 h-[100vh] relative"
               >
                 <item.children />
-                <div className="pointer-events-none absolute inset-0 bg-black/50" />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/80" />
               </div>
             ))}
           </div>
         </div>
 
         {/* Content overlay for mobile */}
-        <div className="relative z-10 flex items-center min-h-[100vh] px-6 py-16">
-          <div className="flex flex-col gap-6 w-full">
-            <div className="space-y-4">
-              <h1
-                id="hero-title"
-                className="text-3xl md:text-5xl font-semibold leading-tight text-white"
-              >
-                Viagens e Visitas Técnicas que Levam Seu Conhecimento Mais Longe
-              </h1>
+        <div className="relative z-10 flex flex-col justify-between min-h-[100vh] px-6 py-8">
+          {/* Top section - Logo/Brand */}
+          <div className="flex justify-center pt-4">
+            <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
+              <span className="text-white font-medium text-sm">
+                Ecoplace Tour
+              </span>
+            </div>
+          </div>
 
-              <p className="text-base md:text-lg text-white/90">
-                Entre nos bastidores de empresas e instituições, conectando
-                teoria à prática com experiências imersivas.
-              </p>
-              <p className="text-base md:text-lg text-white/90">
-                Aprenda com especialistas, viaje com um grupo selecionado e
-                acelere sua carreira com networking real.
-              </p>
+          {/* Bottom section - Content */}
+          <div className="flex flex-col gap-8 pb-8">
+            {/* Main content */}
+            <div className="space-y-6">
+              <div className="space-y-4">
+                <h1
+                  id="hero-title"
+                  className="text-4xl font-bold leading-tight text-white"
+                >
+                  Viagens e Visitas Técnicas que Levam Seu Conhecimento Mais
+                  Longe
+                </h1>
+
+                <p className="text-white/90 text-lg leading-relaxed">
+                  Entre nos bastidores de empresas e instituições, conectando
+                  teoria à prática com experiências imersivas.
+                </p>
+              </div>
+
+              {/* Features */}
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-white rounded-full"></div>
+                  <span className="text-white/80">
+                    Aprenda com especialistas
+                  </span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-white rounded-full"></div>
+                  <span className="text-white/80">
+                    Viaje com grupo selecionado
+                  </span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-white rounded-full"></div>
+                  <span className="text-white/80">
+                    Networking real e estratégico
+                  </span>
+                </div>
+              </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 my-3">
+            <div className="flex flex-col gap-4">
               <Button aria-controls={carouselId}>
-                Garantir Minha Vaga <ChevronRight className="w-5 h-5 ml-1" />
+                Garantir Minha Vaga <ChevronRight className="w-5 h-5 ml-2" />
               </Button>
+
               <Button variant="outline">Ver Próximas Datas</Button>
+            </div>
+
+            <div className="flex justify-center gap-2 pt-4">
+              {HeroItems.map((item, idx) => (
+                <button
+                  key={item.title}
+                  onClick={() => emblaApiMobile?.scrollTo(idx)}
+                  className={cn(
+                    "w-2 h-2 rounded-full transition-all duration-300",
+                    selectedIndex === idx
+                      ? "bg-white w-8"
+                      : "bg-white/40 hover:bg-white/60"
+                  )}
+                  aria-label={`Ir para slide ${idx + 1}`}
+                />
+              ))}
             </div>
           </div>
         </div>
@@ -172,7 +246,7 @@ export function Hero() {
                   <li key={item.title}>
                     <button
                       onClick={() => {
-                        emblaApi?.scrollTo(idx);
+                        emblaApiDesktop?.scrollTo(idx);
                         setSelectedSubheadline(idx);
                       }}
                       className={cn(
@@ -207,7 +281,7 @@ export function Hero() {
         <div
           id={carouselId}
           className="overflow-hidden relative"
-          ref={emblaRef}
+          ref={emblaRefDesktop}
           aria-live="polite"
         >
           <div className="flex">
