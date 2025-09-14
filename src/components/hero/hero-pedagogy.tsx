@@ -1,9 +1,9 @@
-import tourismLearning from "../../assets/images/tourism-learning.jpg";
+import placeholder from "../../assets/images/placeholder.svg";
 
 export function HeroPedagogy() {
   return (
     <img
-      src={tourismLearning}
+      src={placeholder}
       alt="Hero Pedagogy"
       className="w-full h-full object-cover"
     />

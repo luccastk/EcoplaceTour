@@ -3,9 +3,9 @@ import Fade from "embla-carousel-fade";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronRight } from "lucide-react";
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { HeroItems } from "../hero";
 import { Button } from "../ui";
 import { cn } from "../../lib/utils";
+import { HeroItems } from "../../lib/constants";
 
 export function Hero() {
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -113,9 +113,7 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Content overlay for mobile */}
-        <div className="relative z-10 flex flex-col justify-between min-h-[100vh] px-6 py-8">
-          {/* Top section - Logo/Brand */}
+        <div className="relative z-10 flex flex-col justify-between min-h-[90vh] px-6">
           <div className="flex justify-center pt-4">
             <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
               <span className="text-white font-medium text-sm">
@@ -124,9 +122,7 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Bottom section - Content */}
           <div className="flex flex-col gap-8 pb-8">
-            {/* Main content */}
             <div className="space-y-6">
               <div className="space-y-4">
                 <h1
@@ -143,7 +139,6 @@ export function Hero() {
                 </p>
               </div>
 
-              {/* Features */}
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-white rounded-full"></div>
@@ -174,7 +169,7 @@ export function Hero() {
               <Button variant="outline">Ver Próximas Datas</Button>
             </div>
 
-            <div className="flex justify-center gap-2 pt-4">
+            <div className="flex justify-center gap-2">
               {HeroItems.map((item, idx) => (
                 <button
                   key={item.title}
@@ -193,7 +188,6 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Desktop Layout: Side by side */}
       <div className="hidden xl:grid xl:grid-cols-2 min-h-[100vh]">
         <div className="flex items-start pt-46 pb-16 px-20 justify-center">
           <div className="flex flex-col gap-6 w-full">

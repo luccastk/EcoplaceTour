@@ -68,8 +68,7 @@ function Navbar() {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 mx-auto flex items-center justify-between py-4 px-8 transition-all duration-200",
-        isScrolled && "bg-florest",
-        "bg-florest xl:bg-transparent"
+        isScrolled && "bg-florest"
       )}
     >
       <nav

@@ -1,9 +1,9 @@
-import passport from "../../assets/images/tourism-passport.jpg";
+import placeholder from "../../assets/images/placeholder.svg";
 
 export function HeroPassport() {
   return (
     <img
-      src={passport}
+      src={placeholder}
       alt="Hero Passport"
       className="w-full h-full object-cover"
     />
