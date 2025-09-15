@@ -1,4 +1,12 @@
-import { BookOpen, Plane, Star, Target, Users } from "lucide-react";
+import {
+  BookOpen,
+  MessageSquareQuote,
+  Plane,
+  Star,
+  Target,
+  Users,
+} from "lucide-react";
+import { useScreenDetector } from "../../hooks/use-screen-detector";
 
 const AboutItems = [
   {
@@ -40,16 +48,20 @@ const AboutItems = [
 ];
 
 export function About() {
+  const { isDesktop } = useScreenDetector();
+
   return (
-    <section className="py-16 px-20">
+    <section className="pt-8 pb-16 md:py-16 px-6 md:px-20">
       <div className="flex flex-col gap-8 items-center justify-center">
-        <span className="flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary">
-          <Star />
-          Estudantes de todo o país já transformaram suas carreiras conosco.
+        <span className="flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary text-center">
+          {isDesktop && <Star />}
+          {isDesktop
+            ? "Estudantes de todo o país já transformaram suas carreiras conosco."
+            : "Estudantes de todo o país confiam em nós."}
         </span>
 
         <div className="flex flex-col gap-3 items-center justify-center">
-          <h2 className="text-center">
+          <h2 className="text-center relative after:content-[''] after:absolute after:-bottom-4 after:left-1/2 after:w-28 after:-translate-x-1/2 after:h-[2px] after:bg-primary mb-6">
             Transforme o futuro dos seus estudantes
           </h2>
           <p className="w-[40ch] text-center text-muted-foreground">
@@ -59,7 +71,7 @@ export function About() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mt-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-12 mt-12">
         {AboutItems.map((item, index) => (
           <div
             key={item.id}
@@ -90,10 +102,13 @@ export function About() {
         ))}
       </div>
 
-      <div className="mt-20">
-        <h4 className="text-center text-2xl">
+      <div className="mt-20 flex items-center justify-center">
+        <MessageSquareQuote className="left-0 top-0 w-20 h-20 text-primary" />
+        <h4 className="text-2xl relative pl-8 font-serif italic text-gray-700">
           Depois da visita técnica, finalmente entendi como{" "}
-          <span>a teoria funciona na prática</span>.
+          <span className="font-semibold not-italic underline underline-offset-4 cursor-pointer">
+            a teoria funciona na prática.
+          </span>
         </h4>
       </div>
     </section>
