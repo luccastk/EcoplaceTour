@@ -16,7 +16,7 @@ const CTAForm = () => {
         </div>
 
         <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-border/50">
-          <form className="max-w-md mx-auto space-y-6">
+          <form className="max-w-md mx-auto space-y-4">
             <div className="space-y-2">
               <label htmlFor="name" className="text-sm font-medium text-text">
                 Nome completo

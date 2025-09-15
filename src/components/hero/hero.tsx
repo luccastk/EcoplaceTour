@@ -125,7 +125,7 @@ export function Hero() {
                       (subheadline) => (
                         <p
                           key={subheadline}
-                          className="text-sm text-muted-foreground"
+                          className="text-muted-foreground"
                         >
                           {subheadline}
                         </p>
