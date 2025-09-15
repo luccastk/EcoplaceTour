@@ -1,6 +1,5 @@
 import { ServiceItems } from "../../lib/constants/services";
 import { cn } from "../../lib/utils";
-import { Button } from "../ui";
 import { ServiceTitle } from "./title";
 
 export function Service() {
@@ -18,7 +17,10 @@ export function Service() {
           {mainServices.map((service, index) => (
             <div
               key={service.id}
-              className={cn("w-full", index === 2 && "md:col-span-2 xl:col-span-1")}
+              className={cn(
+                "w-full",
+                index === 2 && "md:col-span-2 xl:col-span-1"
+              )}
             >
               <div
                 className={cn(
