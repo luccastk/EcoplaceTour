@@ -1,12 +1,10 @@
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Button } from "../ui";
 import useEmblaCarousel from "embla-carousel-react";
-import { TravelItems } from "../../lib/constants";
 import { useCallback } from "react";
+import { TravelItems } from "../../lib/constants";
+import { Button } from "../ui";
+import { TrevelsTitle } from "./title";
 
 export function Trevels() {
-  console.log("Trevels component rendering, TravelItems:", TravelItems);
-
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: false,
     align: "start",
@@ -23,30 +21,11 @@ export function Trevels() {
 
   return (
     <section className="py-16 bg-florest/10">
-      <div className="pl-20">
-        <div className="flex flex-row gap-4 mb-12">
-          <div className="flex flex-col gap-2">
-            <h2 className="relative pb-4 text-3xl font-bold text-gray-900 before:content-[''] before:absolute before:left-0 before:bottom-0 before:w-1/4 before:h-[2px] before:bg-primary">
-              Viagens Populares
-            </h2>
-            <p className="text-gray-600 text-lg mt-2 pr-20 ">
-              Descubra as viagens mais populares e garanta sua participação em
-              uma das melhores experiências de viagem e aprendizado.
-            </p>
-          </div>
-
-          <div className="hidden md:flex flex-row gap-2 items-end w-full justify-end mr-20">
-            <Button variant="secondary" size="icon" onClick={scrollPrev}>
-              <ChevronLeft className="w-5 h-5" />
-            </Button>
-            <Button variant="secondary" size="icon" onClick={scrollNext}>
-              <ChevronRight className="w-5 h-5" />
-            </Button>
-          </div>
-        </div>
+      <div className="pl-6 xl:pl-20">
+        <TrevelsTitle scrollPrev={scrollPrev} scrollNext={scrollNext} />
 
         <div className="overflow-hidden" ref={emblaRef}>
-          <div className="flex gap-6 py-4">
+          <div className="flex flex-row gap-6 py-4">
             {TravelItems.map((travel) => (
               <div
                 key={travel.id}
@@ -75,8 +54,8 @@ export function Trevels() {
           </div>
         </div>
 
-        <div className="mt-8 text-center pr-20">
-          <Button variant="outline" size="lg" className="w-full md:w-auto">
+      <div className="mt-8 text-center mr-6 md:mr-20">
+          <Button variant="outline" size="lg">
             Ver Todas as Viagens
           </Button>
         </div>
