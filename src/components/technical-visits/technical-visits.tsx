@@ -91,7 +91,7 @@ export function TechnicalVisits() {
           </div>
         </div>
 
-        <div className="text-center mt-8 md:ml-20">
+        <div className="text-center mt-3 md:ml-20">
           <Button variant="outline" size="lg">
             Ver Todas as Visitas Técnicas
           </Button>

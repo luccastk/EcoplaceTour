@@ -54,7 +54,7 @@ export function Trevels() {
           </div>
         </div>
 
-      <div className="mt-8 text-center mr-6 md:mr-20">
+      <div className="text-center mt-3 mr-6 md:mr-20">
           <Button variant="outline" size="lg">
             Ver Todas as Viagens
           </Button>

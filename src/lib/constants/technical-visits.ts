@@ -43,7 +43,7 @@ export const TechnicalVisitItems: TechnicalVisit[] = [
     date: "25 Mar",
     image: tourismPassport,
     description:
-      "Conheça práticas sustentáveis e economia circular em uma das empresas mais verdes do Brasil.",
+      "Conheça práticas sustentáveis e economia circular.",
     spots: 25,
     availableSpots: 12,
     category: "Sustentabilidade",
