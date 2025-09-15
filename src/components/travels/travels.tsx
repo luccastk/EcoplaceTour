@@ -1,10 +1,13 @@
 import useEmblaCarousel from "embla-carousel-react";
-import { useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { TravelItems } from "../../lib/constants";
 import { Button } from "../ui";
 import { TrevelsTitle } from "./title";
 
 export function Travels() {
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
+
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: false,
     align: "start",
@@ -17,6 +20,24 @@ export function Travels() {
 
   const scrollNext = useCallback(() => {
     if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
+
+  const scrollTo = useCallback(
+    (index: number) => {
+      if (emblaApi) emblaApi.scrollTo(index);
+    },
+    [emblaApi]
+  );
+
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    setScrollSnaps(emblaApi.scrollSnapList());
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+
+    emblaApi.on("select", () => {
+      setSelectedIndex(emblaApi.selectedScrollSnap());
+    });
   }, [emblaApi]);
 
   return (
@@ -56,7 +77,25 @@ export function Travels() {
           </div>
         </div>
 
-        <div className="text-center mt-3 mr-6 md:mr-20">
+        {/* Dots Indicator */}
+        <div className="flex flex-col items-center gap-4 mt-6">
+          <div className="flex justify-center gap-2">
+            {scrollSnaps.map((snap, index) => (
+              <button
+                key={snap}
+                onClick={() => scrollTo(index)}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  index === selectedIndex
+                    ? "bg-primary w-8"
+                    : "bg-primary/30 hover:bg-primary/50"
+                }`}
+                aria-label={`Ir para slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className="text-center mt-6">
           <Button variant="outline" size="lg">
             Ver Todas as Viagens
           </Button>

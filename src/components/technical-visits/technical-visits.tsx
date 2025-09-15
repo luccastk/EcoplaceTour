@@ -1,11 +1,14 @@
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
-import { useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { TechnicalVisitItems } from "../../lib/constants";
 import { Button } from "../ui";
 import { TechnicalVisitsTitle } from "./title";
 
 export function TechnicalVisits() {
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
+
   const [emblaRef, emblaApi] = useEmblaCarousel(
     {
       align: "start",
@@ -25,6 +28,24 @@ export function TechnicalVisits() {
 
   const scrollNext = useCallback(() => {
     if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
+
+  const scrollTo = useCallback(
+    (index: number) => {
+      if (emblaApi) emblaApi.scrollTo(index);
+    },
+    [emblaApi]
+  );
+
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    setScrollSnaps(emblaApi.scrollSnapList());
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+
+    emblaApi.on("select", () => {
+      setSelectedIndex(emblaApi.selectedScrollSnap());
+    });
   }, [emblaApi]);
 
   return (
@@ -88,7 +109,24 @@ export function TechnicalVisits() {
           </div>
         </div>
 
-        <div className="text-center mt-3 md:ml-20">
+        <div className="flex flex-col items-center gap-4 mt-6">
+          <div className="flex justify-center gap-2">
+            {scrollSnaps.map((snap, index) => (
+              <button
+                key={snap}
+                onClick={() => scrollTo(index)}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  index === selectedIndex
+                    ? "bg-primary w-8"
+                    : "bg-primary/30 hover:bg-primary/50"
+                }`}
+                aria-label={`Ir para slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className="text-center mt-6 ">
           <Button variant="outline" size="lg">
             Ver Todas as Visitas Técnicas
           </Button>
