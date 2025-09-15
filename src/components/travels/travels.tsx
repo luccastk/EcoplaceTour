@@ -20,8 +20,11 @@ export function Travels() {
   }, [emblaApi]);
 
   return (
-    <section className="py-16 bg-background">
-      <div className="pl-6 xl:pl-20">
+    <section className="py-16 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-tr from-sky/8 via-sage/10 to-moss/8"></div>
+      <div className="absolute inset-0 bg-gradient-to-bl from-transparent via-earth/3 to-transparent"></div>
+
+      <div className="relative pl-6 xl:pl-20">
         <TrevelsTitle scrollPrev={scrollPrev} scrollNext={scrollNext} />
 
         <div className="overflow-hidden" ref={emblaRef}>
@@ -39,7 +42,6 @@ export function Travels() {
                   />
                   <div className="absolute inset-0 bg-black/50 transition-all duration-300 group-hover:bg-black/40" />
 
-                  {/* Main content */}
                   <div className="absolute z-40 bottom-4 left-4 right-4">
                     <h3 className="font-semibold text-lg text-white z-40">
                       {travel.title}

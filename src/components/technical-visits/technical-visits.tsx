@@ -28,18 +28,18 @@ export function TechnicalVisits() {
   }, [emblaApi]);
 
   return (
-    <section className="py-16 bg-florest/10">
-      <div className="pr-6 pl-6 xl:pl-0">
+    <section className="py-16 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-moss/12 via-florest/10 to-sage/8"></div>
+      <div className="absolute inset-0 bg-gradient-to-tl from-transparent via-earth/4 to-transparent"></div>
+
+      <div className="relative pr-6 pl-6 xl:pl-0">
         <TechnicalVisitsTitle scrollPrev={scrollPrev} scrollNext={scrollNext} />
 
-        {/* Carousel */}
         <div className="overflow-hidden" ref={emblaRef}>
           <div className="flex gap-8 py-4">
             {TechnicalVisitItems.map((visit) => (
               <div key={visit.id} className="flex-none w-full md:w-96">
-                {/* Card with modern design */}
                 <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
-                  {/* Image section */}
                   <div className="relative h-64 overflow-hidden">
                     <img
                       src={visit.image}
@@ -49,7 +49,6 @@ export function TechnicalVisits() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   </div>
 
-                  {/* Content section */}
                   <div className="p-6">
                     <div className="mb-4">
                       <h3 className="font-bold text-xl text-gray-900 mb-2">
@@ -67,7 +66,6 @@ export function TechnicalVisits() {
                       {visit.description}
                     </p>
 
-                    {/* Bottom section */}
                     <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                       <div className="flex items-center gap-2">
                         <div className="w-2 h-2 bg-green-500 rounded-full"></div>
@@ -80,7 +78,6 @@ export function TechnicalVisits() {
                       </span>
                     </div>
 
-                    {/* Action button */}
                     <button className="w-full mt-4 bg-primary text-white py-3 rounded-xl font-semibold hover:bg-primary/90 transition-colors duration-200">
                       Inscrever-se
                     </button>

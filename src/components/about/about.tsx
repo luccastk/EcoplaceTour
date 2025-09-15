@@ -51,8 +51,11 @@ export function About() {
   const { isTablet, isDesktop } = useScreenDetector();
 
   return (
-    <section className="pt-8 pb-16 md:py-16 px-6 md:px-20">
-      <div className="flex flex-col gap-8 items-center justify-center">
+    <section className="pt-8 pb-16 md:py-16 px-6 md:px-20 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-r from-sky/6 via-sage/8 to-primary/6"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-earth/3 to-transparent"></div>
+
+      <div className="relative flex flex-col gap-8 items-center justify-center">
         <span className="flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary text-center">
           {!isTablet && <Star />}
           {isDesktop
@@ -61,7 +64,7 @@ export function About() {
         </span>
 
         <div className="flex flex-col gap-3 items-center justify-center">
-          <h2 className="text-center relative after:content-[''] after:absolute after:-bottom-4 after:left-1/2 after:w-28 after:-translate-x-1/2 after:h-[2px] after:bg-primary mb-6">
+          <h2 className="text-center font-semibold font-serif relative after:content-[''] after:absolute after:-bottom-4 after:left-1/2 after:w-28 after:-translate-x-1/2 after:h-[2px] after:bg-primary mb-6">
             Transforme o futuro dos seus estudantes
           </h2>
           <p className="w-[40ch] text-center text-muted-foreground">
@@ -81,8 +84,8 @@ export function About() {
               <div
                 className={`relative rounded-full p-10 ${
                   index % 2 === 0
-                    ? "bg-gradient-to-tl from-secundary/30 from-50% to-white to-50%"
-                    : "bg-gradient-to-tl from-white from-50% to-secundary/30 to-50%"
+                    ? "bg-gradient-to-tl from-secundary/30 from-50% to-background/10 to-50%"
+                    : "bg-gradient-to-tl from-background/10 from-50% to-secundary/30 to-50%"
                 }`}
               >
                 <item.icon className="w-10 h-10 text-primary" />

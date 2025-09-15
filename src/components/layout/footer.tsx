@@ -3,10 +3,10 @@ import { Button, Input } from "../ui";
 
 const CTAForm = () => {
   return (
-    <section className="py-20 bg-gradient-to-br from-primary/20 to-secundary/5">
+    <section className="py-20 bg-background">
       <div className="max-w-4xl mx-auto px-6 xl:px-20">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-semibold text-text mb-6 relative after:content-[''] after:absolute after:-bottom-4 after:left-1/2 after:w-28 after:-translate-x-1/2 after:h-[2px] after:bg-primary">
+          <h2 className="text-3xl md:text-4xl font-semibold font-serif text-text mb-6 relative after:content-[''] after:absolute after:-bottom-4 after:left-1/2 after:w-28 after:-translate-x-1/2 after:h-[2px] after:bg-primary">
             🌱 Fique por dentro das novidades sustentáveis
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -68,12 +68,12 @@ export function Footer() {
       <CTAForm />
 
       <footer className="space-y-8 py-20 bg-gradient-to-br from-primary/20 to-secundary/5 px-6 xl:px-20">
-        <h1 className="font-semibold text-center mb-12 relative after:content-[''] after:absolute after:-bottom-4 after:left-1/2 after:w-28 after:-translate-x-1/2 after:h-[2px] after:bg-primary">
+        <h1 className="font-semibold font-serif text-center mb-12 relative after:content-[''] after:absolute after:-bottom-4 after:left-1/2 after:w-28 after:-translate-x-1/2 after:h-[2px] after:bg-primary">
           EcoplaceTour - Experiências que Conectam Teoria e Prática!
         </h1>
 
         <div className="space-y-4">
-          <h2 className="relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-10 after:h-[2px] after:bg-primary">
+          <h2 className="relative font-serif after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-10 after:h-[2px] after:bg-primary">
             Conheça nossa{" "}
             <span className="text-primary font-bold">proposta!</span>
           </h2>
@@ -84,7 +84,7 @@ export function Footer() {
         </div>
 
         <div className="space-y-4 mb-24">
-          <h2 className="relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-10 after:h-[2px] after:bg-primary">
+          <h2 className="relative font-serif after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-10 after:h-[2px] after:bg-primary">
             Quer acelerar sua{" "}
             <span className="text-primary font-bold"> carreira?</span>
           </h2>

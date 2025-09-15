@@ -11,21 +11,30 @@
   --color-warning: var(--color-warning);
   --color-florest: var(--color-florest);
   --color-muted-foreground: var(--color-muted-foreground);
+  --color-earth: var(--color-earth);
+  --color-sky: var(--color-sky);
+  --color-sage: var(--color-sage);
+  --color-moss: var(--color-moss);
   --font-sans: var(--font-sans);
 }
 
 :root {
   --font-sans: "Rubik", system-ui, sans-serif;
 
-  --color-primary: oklch(0.45 0.15 145);
-  --color-secundary: oklch(0.8 0.15 100);
-  --color-background: oklch(0.95 0.01 120);
+  --color-primary: oklch(0.55 0.12 140);
+  --color-secundary: oklch(0.75 0.1 120);
+  --color-background: oklch(0.98 0.005 120);
   --color-disabled: oklch(0.5 0.01 0);
-  --color-text: oklch(0.25 0.01 0);
-  --color-border: oklch(0.9 0.02 120);
-  --color-warning: oklch(0.75 0.15 85);
-  --color-florest: oklch(0.6 0.05 150);
-  --color-muted-foreground: oklch(0.45 0.01 0);
+  --color-text: oklch(0.2 0.02 140);
+  --color-border: oklch(0.92 0.03 120);
+  --color-warning: oklch(0.7 0.12 80);
+  --color-florest: oklch(0.5 0.08 150);
+  --color-muted-foreground: oklch(0.45 0.02 140);
+
+  --color-earth: oklch(0.6 0.08 60);
+  --color-sky: oklch(0.7 0.06 200);
+  --color-sage: oklch(0.65 0.06 130);
+  --color-moss: oklch(0.45 0.1 135);
 
   --radius: 0.5rem;
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);

@@ -13,7 +13,7 @@ export function TrevelsTitle({
   return (
     <div className="flex flex-row items-center justify-between gap-4 mb-12">
       <div className="flex flex-col gap-2">
-        <h2 className="relative pb-4 text-3xl font-bold text-gray-900 before:content-[''] before:absolute before:left-0 before:bottom-0 before:w-1/4 before:h-[2px] before:bg-primary">
+        <h2 className="relative font-serif pb-4 text-3xl font-bold text-gray-900 before:content-[''] before:absolute before:left-0 before:bottom-0 before:w-1/4 before:h-[2px] before:bg-primary">
           Viagens Populares
         </h2>
         <p className="text-gray-600 text-lg mt-2 pr-20 ">

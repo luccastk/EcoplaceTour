@@ -53,7 +53,7 @@ export function Hero() {
                 <div className="space-y-4">
                   <h1
                     id="hero-title"
-                    className="text-3xl md:text-5xl font-semibold leading-tight text-text"
+                    className="text-3xl md:text-5xl font-semibold font-serif leading-tight text-text"
                   >
                     Viagens e Visitas Técnicas que Levam Seu Conhecimento Mais
                     Longe
