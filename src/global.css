@@ -43,8 +43,9 @@
 }
 
 @layer base {
+  html,
   body {
-    @apply bg-background;
+    @apply bg-background overflow-x-hidden;
   }
 
   h1 {

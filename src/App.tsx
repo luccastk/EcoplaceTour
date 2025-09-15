@@ -5,7 +5,7 @@ import { Home } from "./pages";
 function App() {
   return (
     <BrowserRouter>
-      <div className="w-screen">
+      <div className="min-h-screen overflow-x-hidden">
         <Navbar />
         <main>
           <Routes>

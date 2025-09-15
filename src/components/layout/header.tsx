@@ -76,7 +76,7 @@ function Navbar() {
         aria-label="Navbar"
         className="w-full flex flex-row items-center justify-between relative"
       >
-        <div className="flex flex-row gap-24 items-center">
+        <div className="flex flex-row gap-8 xl:gap-24 items-center">
           <img src={logo} alt="Logo" className="w-20 h-20 shrink-0" />
 
           <ul className="hidden xl:flex items-center justify-center gap-4 min-h-[2.5rem]">

@@ -53,7 +53,7 @@ export function Travels() {
             {TravelItems.map((travel) => (
               <div
                 key={travel.id}
-                className="flex-none w-80 group cursor-pointer"
+                className="flex-none w-72 md:w-80 group cursor-pointer"
               >
                 <div className="w-full h-[450px] overflow-hidden relative rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                   <img

@@ -59,7 +59,7 @@ export function TechnicalVisits() {
         <div className="overflow-hidden" ref={emblaRef}>
           <div className="flex gap-8 py-4">
             {TechnicalVisitItems.map((visit) => (
-              <div key={visit.id} className="flex-none w-full md:w-96">
+              <div key={visit.id} className="flex-none w-full md:w-80 lg:w-96">
                 <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
                   <div className="relative h-64 overflow-hidden">
                     <img
