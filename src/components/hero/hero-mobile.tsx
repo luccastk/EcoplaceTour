@@ -1,21 +1,37 @@
-import useEmblaCarousel from "embla-carousel-react";
-import { HeroItems } from "../../lib/constants";
-import { Button } from "../ui";
-import { cn } from "../../lib/utils";
-import { ChevronRight } from "lucide-react";
-import { useState } from "react";
 import Autoplay from "embla-carousel-autoplay";
+import Fade from "embla-carousel-fade";
+import useEmblaCarousel from "embla-carousel-react";
+import { ChevronRight } from "lucide-react";
+import { useEffect, useState } from "react";
+import { HeroItems } from "../../lib/constants";
+import { cn } from "../../lib/utils";
+import { Button } from "../ui";
 
 const carouselId = "hero-carousel-mobile";
 
 export function HeroMobile() {
-  const [selectedIndex, setSelectedIndex] = useState(0);
-
   const [emblaRefMobile, emblaApiMobile] = useEmblaCarousel({ loop: true }, [
     Autoplay({
       delay: 5000,
     }),
+    Fade(),
   ]);
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  useEffect(() => {
+    if (!emblaApiMobile) return;
+
+    const onSelect = () => {
+      setSelectedIndex(emblaApiMobile.selectedScrollSnap());
+    };
+
+    emblaApiMobile.on("select", onSelect);
+    onSelect();
+
+    return () => {
+      emblaApiMobile.off("select", onSelect);
+    };
+  }, [emblaApiMobile]);
 
   return (
     <div className="min-h-[100vh] relative">

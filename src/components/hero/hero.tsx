@@ -13,7 +13,6 @@ const carouselId = "hero-carousel";
 
 export function Hero() {
   const [selectedSubheadline, setSelectedSubheadline] = useState(0);
-  const [selectedIndex, setSelectedIndex] = useState(0);
   const { isDesktop } = useScreenDetector();
 
   const [emblaRefDesktop, emblaApiDesktop] = useEmblaCarousel({ loop: true }, [
@@ -112,7 +111,7 @@ export function Hero() {
                           )}
                           aria-controls={carouselId}
                           aria-current={
-                            selectedIndex === idx ? "true" : "false"
+                            selectedSubheadline === idx ? "true" : "false"
                           }
                         >
                           {item.title}
@@ -122,7 +121,7 @@ export function Hero() {
                   </ul>
 
                   <div className="space-y-1">
-                    {HeroItems[selectedSubheadline]?.subheadlines.map(
+                    {HeroItems[0]?.subheadlines.map(
                       (subheadline) => (
                         <p
                           key={subheadline}
