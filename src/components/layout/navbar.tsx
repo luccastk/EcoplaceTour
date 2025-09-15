@@ -3,14 +3,15 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import { cn } from "../../lib/utils";
-import { Button } from "./button";
+import { Button } from "../ui/button";
 
 const links = [
   { label: "Home", to: "/" },
-  { label: "Sobre", to: "/sobre" },
-  { label: "Empresas", to: "/empresas" },
-  { label: "Contato", to: "/contato" },
-  { label: "Parcerias", to: "/parcerias" },
+  { label: "Sobre Nós", to: "/about" },
+  { label: "Ecoplace Edu ", to: "/edu" },
+  { label: "Ecoplace Travel", to: "/travel" },
+  { label: "Propósito", to: "/purpose" },
+  { label: "Orçamentos", to: "/contact" },
 ];
 
 function Navbar() {
@@ -68,7 +69,7 @@ function Navbar() {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 mx-auto flex items-center justify-between py-4 px-8 transition-all duration-200",
-        isScrolled && "bg-florest"
+        (isScrolled || isMobileMenuOpen) && "bg-background"
       )}
     >
       <nav
@@ -88,8 +89,7 @@ function Navbar() {
                     aria-label={link.label}
                     to={link.to}
                     className={cn(
-                      "relative transition-colors duration-200 group block px-1",
-                      isScrolled ? "text-white" : "text-text"
+                      "relative transition-colors duration-200 group block px-1 text-text"
                     )}
                   >
                     {link.label}
