@@ -4,7 +4,7 @@ import { TravelItems } from "../../lib/constants";
 import { Button } from "../ui";
 import { TrevelsTitle } from "./title";
 
-export function Trevels() {
+export function Travels() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: false,
     align: "start",
@@ -20,7 +20,7 @@ export function Trevels() {
   }, [emblaApi]);
 
   return (
-    <section className="py-16 bg-florest/10">
+    <section className="py-16 bg-background">
       <div className="pl-6 xl:pl-20">
         <TrevelsTitle scrollPrev={scrollPrev} scrollNext={scrollNext} />
 
@@ -54,7 +54,7 @@ export function Trevels() {
           </div>
         </div>
 
-      <div className="text-center mt-3 mr-6 md:mr-20">
+        <div className="text-center mt-3 mr-6 md:mr-20">
           <Button variant="outline" size="lg">
             Ver Todas as Viagens
           </Button>

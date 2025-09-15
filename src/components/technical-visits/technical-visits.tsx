@@ -28,7 +28,7 @@ export function TechnicalVisits() {
   }, [emblaApi]);
 
   return (
-    <section className="py-16 bg-background">
+    <section className="py-16 bg-florest/10">
       <div className="pr-6 pl-6 xl:pl-0">
         <TechnicalVisitsTitle scrollPrev={scrollPrev} scrollNext={scrollNext} />
 

@@ -121,7 +121,7 @@ export function Hero() {
                   </ul>
 
                   <div className="space-y-1">
-                    {HeroItems[0]?.subheadlines.map(
+                    {HeroItems[selectedSubheadline]?.subheadlines.map(
                       (subheadline) => (
                         <p
                           key={subheadline}
