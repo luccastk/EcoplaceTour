@@ -180,21 +180,11 @@ export function ContactForm() {
             </div>
           </form>
 
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-sm text-muted-foreground mt-6">
-            <div className="flex items-center gap-2">
-              <span>🔒</span>
-              <span>Seus dados estão seguros conosco</span>
-            </div>
-            <div className="hidden md:block w-1 h-1 bg-muted-foreground rounded-full"></div>
-            <div className="flex items-center gap-2">
-              <span>✉️</span>
-              <span>Sem spam, apenas conteúdo relevante</span>
-            </div>
-            <div className="hidden md:block w-1 h-1 bg-muted-foreground rounded-full"></div>
-            <div className="flex items-center gap-2">
-              <span>⚡</span>
-              <span>Resposta em até 24h</span>
-            </div>
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 t-6">
+            <p className="text-xs text-muted-foreground mt-6">
+              🔒 Seus dados estão seguros conosco • ✉️ Sem spam, apenas conteúdo
+              relevante
+            </p>
           </div>
         </div>
       </div>
