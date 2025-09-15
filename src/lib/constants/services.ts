@@ -1,10 +1,10 @@
 import {
-  Building2,
-  GraduationCap,
-  Globe,
-  Users,
+  BookOpen,
   Briefcase,
   Calendar,
+  GraduationCap,
+  Shield,
+  Users,
   type LucideIcon,
 } from "lucide-react";
 
@@ -23,13 +23,13 @@ export interface Service {
 export const ServiceItems: Service[] = [
   {
     id: 1,
-    title: "Visitas Técnicas Personalizadas",
+    title: "Experiências Educacionais",
     description:
-      "Visitas técnicas sob medida para sua instituição, conectando teoria à prática em empresas líderes do mercado.",
+      "Visitas técnicas planejadas por especialistas em educação para maximizar o aprendizado prático dos estudantes.",
     features: [
-      "Agendamento flexível",
-      "Transporte incluso",
+      "Roteiros personalizados",
       "Material didático",
+      "Guias especializados",
       "Certificado de participação",
       "Networking com profissionais",
     ],
@@ -37,41 +37,41 @@ export const ServiceItems: Service[] = [
     duration: "3-6 horas",
     category: "Educacional",
     popular: true,
-    icon: Building2,
+    icon: GraduationCap,
   },
   {
     id: 2,
-    title: "Viagens de Estudo",
+    title: "Visita Pedagógica",
     description:
-      "Experiências imersivas que combinam aprendizado, networking e descoberta de novos mercados e culturas.",
+      "Experiência educativa guiada, conectando teoria e prática de forma dinâmica e organizada.",
     features: [
-      "Hospedagem inclusa",
-      "Guia especializado",
-      "Visitas programadas",
+      "Temas adaptados",
+      "Experiências práticas e interativas",
+      "Acompanhamento de educadores",
       "Material de apoio",
       "Grupo reduzido",
     ],
     price: "A partir de R$ 890",
     duration: "2-5 dias",
     category: "Imersão",
-    icon: Globe,
+    icon: BookOpen,
   },
   {
     id: 3,
-    title: "Consultoria Educacional",
+    title: "Segurança Garantida",
     description:
-      "Apoio especializado para desenvolvimento de programas educacionais e parcerias estratégicas.",
+      "Todos os procedimentos de segurança são rigorosamente seguidos, com equipamentos de proteção e acompanhamento profissional.",
     features: [
-      "Análise de currículo",
-      "Planejamento estratégico",
-      "Parcerias empresariais",
+      "EPIs fornecidos",
+      "Seguro total",
+      "Protocolos de segurança",
       "Mentoria contínua",
       "Relatórios detalhados",
     ],
     price: "A partir de R$ 1.500",
     duration: "1-3 meses",
     category: "Consultoria",
-    icon: GraduationCap,
+    icon: Shield,
   },
   {
     id: 4,
