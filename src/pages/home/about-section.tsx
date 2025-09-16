@@ -7,7 +7,7 @@ import {
   Users,
 } from "lucide-react";
 import { useScreenDetector } from "../../hooks/use-screen-detector.hook";
-import { AnimatedDiv } from "../ui/animations";
+import { AnimatedDiv } from "../../components/ui/animations";
 import { ANIMATION_DELAY_0, ANIMATION_DELAY_200 } from "../../constants";
 
 const AboutItems = [
@@ -49,7 +49,7 @@ const AboutItems = [
   },
 ];
 
-export function About() {
+export function AboutSection() {
   const { isTablet, isDesktop } = useScreenDetector();
 
   return (

@@ -1,6 +1,4 @@
-import { HeroPedagogy } from "../../components/hero/hero-pedagogy";
-import { HeroPassport } from "../../components/hero/hero-passport";
-import { HeroTrip } from "../../components/hero/hero-trip";
+import Placeholder from "../../assets/images/placeholder.svg";
 
 export const HeroItems = [
   {
@@ -12,7 +10,7 @@ export const HeroItems = [
       "Construa networking estratégico e leve insights aplicáveis diretamente para sua carreira.",
     ],
     cta: "Quero Participar",
-    children: HeroPedagogy,
+    children: Placeholder,
   },
   {
     id: 2,
@@ -23,7 +21,7 @@ export const HeroItems = [
       "Cresça pessoal e profissionalmente com experiências imersivas que unem aprendizado e cultura.",
     ],
     cta: "Ver Próximas Datas",
-    children: HeroPassport,
+    children: Placeholder,
   },
   {
     id: 3,
@@ -34,6 +32,6 @@ export const HeroItems = [
       "Cada viagem e visita técnica é desenhada para gerar valor direto para sua carreira.",
     ],
     cta: "Quero Alcançar Meus Objetivos",
-    children: HeroTrip,
+    children: Placeholder,
   },
 ];
