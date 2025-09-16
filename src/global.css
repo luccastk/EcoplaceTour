@@ -40,6 +40,30 @@
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Mobile viewport height fixes */
+  --vh: 1vh;
+  --mobile-vh: 100vh;
+}
+
+/* Mobile viewport height calculation */
+@supports (height: 100svh) {
+  :root {
+    --mobile-vh: 100svh;
+  }
+}
+
+@supports (height: 100dvh) {
+  :root {
+    --mobile-vh: 100dvh;
+  }
+}
+
+/* Fallback for browsers that don't support new viewport units */
+@media (max-width: 768px) {
+  :root {
+    --mobile-vh: calc(var(--vh, 1vh) * 100);
+  }
 }
 
 @layer base {
