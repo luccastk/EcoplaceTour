@@ -3,7 +3,7 @@ import Fade from "embla-carousel-fade";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronRight } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
-import { useScreenDetector } from "../../hooks/use-screen-detector";
+import { useScreenDetector } from "../../hooks/use-screen-detector.hook";
 import { HeroItems } from "../../lib/constants";
 import { cn } from "../../lib/utils";
 import { Button } from "../ui";

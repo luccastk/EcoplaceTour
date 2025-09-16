@@ -1,0 +1,10 @@
+export const ANIMATION_DELAY_200 = 200;
+export const ANIMATION_DELAY_400 = 400;
+export const ANIMATION_DELAY_600 = 600;
+export const ANIMATION_DELAY_800 = 800;
+export const ANIMATION_DELAY_1000 = 1000;
+export const ANIMATION_DELAY_1200 = 1200;
+export const ANIMATION_DELAY_1400 = 1400;
+export const ANIMATION_DELAY_1600 = 1600;
+export const ANIMATION_DELAY_1800 = 1800;
+export const ANIMATION_DELAY_2000 = 2000;

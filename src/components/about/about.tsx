@@ -6,7 +6,7 @@ import {
   Target,
   Users,
 } from "lucide-react";
-import { useScreenDetector } from "../../hooks/use-screen-detector";
+import { useScreenDetector } from "../../hooks/use-screen-detector.hook";
 
 const AboutItems = [
   {
