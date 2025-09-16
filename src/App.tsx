@@ -1,25 +1,24 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { cn } from "./lib/utils";
 import { Footer, Navbar } from "./components/layout";
-import { Loading } from "./components/ui";
 import { Home } from "./pages";
+import UiStateStore from "./stores/ui-state.store";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  const { isLoadingPage, setIsLoadingPage } = UiStateStore();
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 500); // Máximo 500ms
+    const timer = setTimeout(() => setIsLoadingPage(false), 2000);
 
     const handleLoad = () => {
       clearTimeout(timer);
-      setIsLoading(false);
+      setIsLoadingPage(false);
     };
 
-    // Se a página já carregou completamente
     if (document.readyState === "complete") {
       handleLoad();
     } else {
-      // Aguarda todos os recursos carregarem
       window.addEventListener("load", handleLoad);
     }
 
@@ -27,22 +26,25 @@ function App() {
       clearTimeout(timer);
       window.removeEventListener("load", handleLoad);
     };
-  }, []);
-
-  if (isLoading) {
-    return <Loading />;
-  }
+  }, [setIsLoadingPage]);
 
   return (
     <BrowserRouter>
       <div className="min-h-screen overflow-x-hidden">
-        <Navbar />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-          </Routes>
-        </main>
-        <Footer />
+        <div
+          className={cn(
+            "transition-all duration-800 ease-in-out",
+            isLoadingPage ? "blur-sm opacity-0" : "opacity-100"
+          )}
+        >
+          <Navbar />
+          <main>
+            <Routes>
+              <Route path="/" element={<Home />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
       </div>
     </BrowserRouter>
   );

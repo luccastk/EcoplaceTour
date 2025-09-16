@@ -1,6 +1,6 @@
 export function Loading() {
   return (
-    <div className="fixed inset-0 bg-white z-50 flex items-center justify-center">
+    <div className="fixed inset-0 bg-white/80 backdrop-blur-sm z-50 flex items-center justify-center">
       <div className="flex flex-col items-center space-y-4">
         {/* Logo ou ícone da empresa */}
         <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center animate-pulse">
