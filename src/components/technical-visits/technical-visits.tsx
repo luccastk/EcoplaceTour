@@ -55,7 +55,7 @@ export function TechnicalVisits() {
       <div className="absolute inset-0 bg-gradient-to-br from-moss/12 via-florest/10 to-sage/8"></div>
       <div className="absolute inset-0 bg-gradient-to-tl from-transparent via-earth/4 to-transparent"></div>
 
-      <div className="relative pr-6 pl-6 xl:pl-0">
+      <div className="relative pr-6 xl:px-20 pl-6 xl:pl-0">
         <TechnicalVisitsTitle scrollPrev={scrollPrev} scrollNext={scrollNext} />
 
         <AnimatedDiv animationType="fade-up" delay={ANIMATION_DELAY_200}>

@@ -53,7 +53,7 @@ export function About() {
   const { isTablet, isDesktop } = useScreenDetector();
 
   return (
-    <section className="pt-8 pb-16 px-6 md:py-16 relative overflow-hidden">
+    <section className="pt-8 pb-16 px-6 xl:px-20 md:py-16 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-sky/6 via-sage/8 to-primary/6" />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-earth/3 to-transparent" />
 
@@ -88,7 +88,7 @@ export function About() {
             delay={index * ANIMATION_DELAY_200}
             threshold={0.2}
           >
-            <div className="bg-white py-12 px-8 rounded-lg shadow-xl min-h-[340px]">
+            <div className="bg-white py-12 px-8 rounded-lg shadow-xl h-[390px]">
               <div className="flex flex-col gap-4 items-center justify-center">
                 <div
                   className={`relative rounded-full p-10 ${
@@ -115,7 +115,11 @@ export function About() {
         ))}
       </div>
 
-      <AnimatedDiv animationType="fade-up" delay={ANIMATION_DELAY_0} threshold={0.3}>
+      <AnimatedDiv
+        animationType="fade-up"
+        delay={ANIMATION_DELAY_0}
+        threshold={0.3}
+      >
         <div className="mt-20 flex items-center justify-center">
           <MessageSquareQuote className="left-0 top-0 w-20 h-20 text-primary" />
           <h4 className="text-2xl relative pl-8 font-serif italic text-gray-700">

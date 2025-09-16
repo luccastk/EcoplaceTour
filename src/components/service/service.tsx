@@ -8,11 +8,11 @@ export function Service() {
   const mainServices = ServiceItems.slice(0, 3);
 
   return (
-    <section className="py-16 relative overflow-hidden">
+    <section className="py-16 px-6 xl:px-20 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-sage/8 via-primary/6 to-moss/8"></div>
       <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-earth/5 to-transparent"></div>
 
-      <div className="relative px-6 md:px-20">
+      <div className="relative">
         <ServiceTitle />
 
         <AnimatedDiv animationType="fade-up" delay={ANIMATION_DELAY_200}>
@@ -24,7 +24,7 @@ export function Service() {
                 delay={ANIMATION_DELAY_400 + index * 150}
                 className={cn(
                   "w-full",
-                  index === 2 && "md:col-span-2 xl:col-span-1"
+                  index === 2 && "lg:col-span-2 xl:col-span-1"
                 )}
               >
                 <div
