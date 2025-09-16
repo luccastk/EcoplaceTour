@@ -52,9 +52,9 @@ export function Hero() {
       aria-label="Destaques: visitas técnicas e viagens"
     >
       {isDesktop ? (
-        <div className="grid grid-cols-2 min-h-[100vh]">
-          <div className="flex items-start pt-30 px-20 justify-center">
-            <div className="flex flex-col h-full gap-16 w-full">
+        <div className="grid grid-cols-2 min-h-svh">
+          <div className="flex items-start pt-36 pb-10 px-20 justify-center">
+            <div className="flex flex-col gap-8 w-full">
               <div>
                 <div className="space-y-4">
                   <AnimatedDiv delay={ANIMATION_DELAY_200}>
@@ -102,7 +102,7 @@ export function Hero() {
               </div>
 
               <AnimatedDiv delay={ANIMATION_DELAY_800} animationType="fade-up">
-                <div className="space-y-7">
+                <div className="space-y-4">
                   <div className="bottom-0 left-0 right-0 w-full h-[4px] bg-border relative overflow-hidden">
                     <span
                       className="absolute top-0 h-full bg-primary transition-all duration-500 ease-in-out"
@@ -117,7 +117,7 @@ export function Hero() {
 
                   <nav
                     aria-label="Selecionar destaque do hero"
-                    className="flex flex-col gap-7"
+                    className="flex flex-col gap-4"
                   >
                     <ul className="grid grid-cols-3 gap-4">
                       {HeroItems.map((item, idx) => (
@@ -162,15 +162,15 @@ export function Hero() {
 
           <div
             id={carouselId}
-            className="overflow-hidden relative"
+            className="overflow-hidden relative h-full"
             ref={emblaRefDesktop}
             aria-live="polite"
           >
-            <div className="flex">
+            <div className="flex h-full">
               {HeroItems.map((item) => (
                 <div
                   key={item.title}
-                  className="flex-[0_0_100%] min-w-0 h-[100vh] relative"
+                  className="flex-[0_0_100%] min-w-0 h-full relative"
                 >
                   <item.children />
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent" />
