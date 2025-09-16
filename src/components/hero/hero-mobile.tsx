@@ -4,7 +4,7 @@ import { useCarousel } from "../../hooks/use-carousel.hook";
 import { HeroItems } from "../../lib/constants";
 import { cn } from "../../lib/utils";
 import UiStateStore from "../../stores/ui-state.store";
-import { Button } from "../ui";
+import { AnimatedDiv, Button } from "../ui";
 import {
   ANIMATION_DELAY_1000,
   ANIMATION_DELAY_1200,
@@ -47,124 +47,107 @@ export function HeroMobile() {
         <div className="flex flex-col gap-8">
           <div className="space-y-6">
             <div className="space-y-4">
-              <h1
-                id="hero-title"
-                className={cn(
-                  "max-w-[20ch] lg:w-full text-4xl font-bold leading-tight text-white transition-all duration-1000 ease-out",
-                  isLoadingPage && "blur-sm opacity-0",
-                  !isVisible && "opacity-0 translate-y-8",
-                  isVisible && "opacity-100 translate-y-0"
-                )}
-                style={{ transitionDelay: `${ANIMATION_DELAY_200}ms` }}
-              >
-                Viagens e Visitas Técnicas que Levam Seu Conhecimento Mais Longe
-              </h1>
+              <AnimatedDiv delay={ANIMATION_DELAY_200} isVisible={isVisible}>
+                <h1
+                  id="hero-title"
+                  className={cn(
+                    "max-w-[20ch] lg:w-full text-4xl font-bold leading-tight text-white",
+                    isLoadingPage && "blur-sm opacity-0"
+                  )}
+                >
+                  Viagens e Visitas Técnicas que Levam Seu Conhecimento Mais
+                  Longe
+                </h1>
+              </AnimatedDiv>
 
-              <p
-                className={cn(
-                  "max-w-[40ch] lg:w-full text-white/90 text-lg leading-relaxed transition-all duration-1000 ease-out",
-                  isLoadingPage && "blur-sm translate-y-10",
-                  !isVisible && "opacity-0 translate-y-6",
-                  isVisible && "opacity-100 translate-y-0"
-                )}
-                style={{ transitionDelay: `${ANIMATION_DELAY_400}ms` }}
-              >
-                Entre nos bastidores de empresas e instituições, conectando
-                teoria à prática com experiências imersivas.
-              </p>
+              <AnimatedDiv delay={ANIMATION_DELAY_400} isVisible={isVisible}>
+                <p
+                  className={cn(
+                    "max-w-[40ch] lg:w-full text-white/90 text-lg leading-relaxed",
+                    isLoadingPage && "blur-sm translate-y-10"
+                  )}
+                >
+                  Entre nos bastidores de empresas e instituições, conectando
+                  teoria à prática com experiências imersivas.
+                </p>
+              </AnimatedDiv>
             </div>
 
             <div className="space-y-3">
-              <div
-                className={cn(
-                  "flex items-center gap-3 transition-all duration-1000 ease-out",
-                  !isVisible && "opacity-0 translate-x-4",
-                  isVisible && "opacity-100 translate-x-0"
-                )}
-                style={{ transitionDelay: `${ANIMATION_DELAY_600}ms` }}
+              <AnimatedDiv
+                delay={ANIMATION_DELAY_600}
+                isVisible={isVisible}
+                animationType="fade-right"
               >
-                <div className="w-2 h-2 bg-white rounded-full"></div>
-                <span className="text-white/80">Aprenda com especialistas</span>
-              </div>
-              <div
-                className={cn(
-                  "flex items-center gap-3 transition-all duration-1000 ease-out",
-                  !isVisible && "opacity-0 translate-x-4",
-                  isVisible && "opacity-100 translate-x-0"
-                )}
-                style={{ transitionDelay: `${ANIMATION_DELAY_800}ms` }}
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-white rounded-full"></div>
+                  <span className="text-white/80">
+                    Aprenda com especialistas
+                  </span>
+                </div>
+              </AnimatedDiv>
+              <AnimatedDiv
+                delay={ANIMATION_DELAY_800}
+                isVisible={isVisible}
+                animationType="fade-right"
               >
-                <div className="w-2 h-2 bg-white rounded-full"></div>
-                <span className="text-white/80">
-                  Viaje com grupo selecionado
-                </span>
-              </div>
-              <div
-                className={cn(
-                  "flex items-center gap-3 transition-all duration-1000 ease-out",
-                  !isVisible && "opacity-0 translate-x-4",
-                  isVisible && "opacity-100 translate-x-0"
-                )}
-                style={{ transitionDelay: `${ANIMATION_DELAY_1000}ms` }}
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-white rounded-full"></div>
+                  <span className="text-white/80">
+                    Viaje com grupo selecionado
+                  </span>
+                </div>
+              </AnimatedDiv>
+              <AnimatedDiv
+                delay={ANIMATION_DELAY_1000}
+                isVisible={isVisible}
+                animationType="fade-right"
               >
-                <div className="w-2 h-2 bg-white rounded-full"></div>
-                <span className="text-white/80">
-                  Networking real e estratégico
-                </span>
-              </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-white rounded-full"></div>
+                  <span className="text-white/80">
+                    Networking real e estratégico
+                  </span>
+                </div>
+              </AnimatedDiv>
             </div>
           </div>
         </div>
 
         <div className="flex flex-col gap-6 pb-8">
           <div className="flex flex-col gap-4">
-            <div
-              className={cn(
-                "transition-all duration-1000 ease-out",
-                !isVisible && "opacity-0 translate-y-6",
-                isVisible && "opacity-100 translate-y-0"
-              )}
-              style={{ transitionDelay: `${ANIMATION_DELAY_1200}ms` }}
-            >
+            <AnimatedDiv delay={ANIMATION_DELAY_1200} isVisible={isVisible}>
               <Button aria-controls={carouselId}>
                 Garantir Minha Vaga <ChevronRight className="w-5 h-5 ml-2" />
               </Button>
-            </div>
+            </AnimatedDiv>
 
-            <div
-              className={cn(
-                "transition-all duration-1000 ease-out",
-                !isVisible && "opacity-0 translate-y-6",
-                isVisible && "opacity-100 translate-y-0"
-              )}
-              style={{ transitionDelay: `${ANIMATION_DELAY_1400}ms` }}
-            >
+            <AnimatedDiv delay={ANIMATION_DELAY_1400} isVisible={isVisible}>
               <Button variant="outline">Ver Próximas Datas</Button>
-            </div>
+            </AnimatedDiv>
           </div>
 
-          <div
-            className={cn(
-              "flex justify-center gap-2 transition-all duration-1000 ease-out",
-              !isVisible && "opacity-0 translate-y-4",
-              isVisible && "opacity-100 translate-y-0"
-            )}
-            style={{ transitionDelay: `${ANIMATION_DELAY_1600}ms` }}
+          <AnimatedDiv
+            delay={ANIMATION_DELAY_1600}
+            isVisible={isVisible}
+            animationType="fade-down"
           >
-            {HeroItems.map((item, idx) => (
-              <button
-                key={item.title}
-                onClick={() => emblaApi?.scrollTo(idx)}
-                className={cn(
-                  "w-2 h-2 rounded-full transition-all duration-300",
-                  selectedIndex === idx
-                    ? "bg-white w-8"
-                    : "bg-white/40 hover:bg-white/60"
-                )}
-                aria-label={`Ir para slide ${idx + 1}`}
-              />
-            ))}
-          </div>
+            <div className="flex justify-center gap-2">
+              {HeroItems.map((item, idx) => (
+                <button
+                  key={item.title}
+                  onClick={() => emblaApi?.scrollTo(idx)}
+                  className={cn(
+                    "w-2 h-2 rounded-full transition-all duration-300",
+                    selectedIndex === idx
+                      ? "bg-white w-8"
+                      : "bg-white/40 hover:bg-white/60"
+                  )}
+                  aria-label={`Ir para slide ${idx + 1}`}
+                />
+              ))}
+            </div>
+          </AnimatedDiv>
         </div>
       </div>
     </div>
