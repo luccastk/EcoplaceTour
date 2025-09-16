@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-export const useVisibleAnimation = (threshold = 0.1) => {
+export const useVisibleAnimation = (threshold = 0.2) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -14,7 +14,7 @@ export const useVisibleAnimation = (threshold = 0.1) => {
       },
       {
         threshold,
-        rootMargin: "0px 0px -10px 0px",
+        rootMargin: "0px 0px 50px 0px",
       }
     );
 

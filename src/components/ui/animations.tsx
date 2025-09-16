@@ -14,37 +14,37 @@ export function AnimatedDiv({
   delay = 0,
   className = "",
   animationType = "fade-up",
-  threshold = 0.1,
+  threshold = 0.2,
 }: Readonly<AnimatedDivProps>) {
   const { isVisible, ref } = useVisibleAnimation(threshold);
   const getAnimationClasses = () => {
-    const baseClasses = "transition-all duration-1000 ease-out";
+    const baseClasses = "transition-all duration-700 ease-out";
 
     switch (animationType) {
       case "fade-up":
         return cn(
           baseClasses,
-          !isVisible && "opacity-0 translate-y-6",
+          !isVisible && "opacity-0 translate-y-4",
           isVisible && "opacity-100 translate-y-0"
         );
 
       case "fade-right":
         return cn(
           baseClasses,
-          !isVisible && "opacity-0 translate-x-4",
+          !isVisible && "opacity-0 translate-x-3",
           isVisible && "opacity-100 translate-x-0"
         );
       case "fade-down":
         return cn(
           baseClasses,
-          !isVisible && "opacity-0 translate-y-4",
+          !isVisible && "opacity-0 translate-y-3",
           isVisible && "opacity-100 translate-y-0"
         );
       case "fade-left":
         return cn(
           baseClasses,
-          !isVisible && "opacity-0 -translate-x-4",
-          isVisible && "opacity-100 -translate-x-0"
+          !isVisible && "opacity-0 -translate-x-3",
+          isVisible && "opacity-100 translate-x-0"
         );
       default:
         return baseClasses;
