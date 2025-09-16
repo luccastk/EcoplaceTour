@@ -21,7 +21,7 @@ export function HeroMobile() {
   const { emblaRef, emblaApi, selectedIndex } = useCarousel();
 
   return (
-    <div className="relative min-h-dvh">
+    <div className="relative h-svh">
       <div
         id={carouselId}
         className="absolute inset-0 overflow-hidden"
@@ -41,7 +41,7 @@ export function HeroMobile() {
         </div>
       </div>
 
-      <div className="relative z-10 flex flex-col justify-between px-6 pt-30 min-h-dvh">
+      <div className="relative z-10 flex flex-col justify-between px-6 pt-30 h-svh">
         <div className="flex flex-col gap-8">
           <div className="space-y-6">
             <div className="space-y-4">
