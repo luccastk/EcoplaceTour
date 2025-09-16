@@ -11,7 +11,7 @@ const links = [
   { label: "Ecoplace Edu ", to: "/educa" },
   { label: "Ecoplace Travel", to: "/travel" },
   { label: "Propósito", to: "/purpose" },
-  { label: "Orçamentos", to: "/contact" },
+  { label: "Orçamentos", to: "/budget" },
 ];
 
 function Navbar() {
@@ -69,7 +69,7 @@ function Navbar() {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 mx-auto flex items-center justify-between py-4 px-8 transition-all duration-200",
-        (isScrolled || isMobileMenuOpen) && "bg-background"
+        (isScrolled || isMobileMenuOpen) && "bg-foreground"
       )}
     >
       <nav

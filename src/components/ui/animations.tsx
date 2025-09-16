@@ -37,8 +37,8 @@ export function AnimatedDiv({
       case "fade-down":
         return cn(
           baseClasses,
-          !isVisible && "opacity-0 translate-y-3",
-          isVisible && "opacity-100 translate-y-0"
+          !isVisible && "opacity-0 -translate-y-4",
+          isVisible && "opacity-100 -translate-y-0"
         );
       case "fade-left":
         return cn(

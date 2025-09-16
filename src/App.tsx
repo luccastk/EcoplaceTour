@@ -1,9 +1,16 @@
 import { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Footer, Navbar } from "./components/layout";
+import {
+  AboutPage,
+  BudgetPage,
+  EducaPage,
+  HomePage,
+  PurposePage,
+  TravelsPage,
+} from "./components/pages";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { cn } from "./lib/utils";
-import { AboutUs, Educa, Home, Purpose } from "./pages";
 import UiStateStore from "./stores/ui-state.store";
 
 function App() {
@@ -42,10 +49,12 @@ function App() {
           <Navbar />
           <main>
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<AboutUs />} />
-              <Route path="/purpose" element={<Purpose />} />
-              <Route path="/educa" element={<Educa />} />
+              <Route path="/" element={<HomePage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/purpose" element={<PurposePage />} />
+              <Route path="/educa" element={<EducaPage />} />
+              <Route path="/travel" element={<TravelsPage />} />
+              <Route path="/budget" element={<BudgetPage />} />
             </Routes>
           </main>
           <Footer />
