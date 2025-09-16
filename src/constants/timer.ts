@@ -1,3 +1,4 @@
+export const ANIMATION_DELAY_0 = 0;
 export const ANIMATION_DELAY_200 = 200;
 export const ANIMATION_DELAY_400 = 400;
 export const ANIMATION_DELAY_600 = 600;

@@ -1,10 +1,4 @@
 import { ChevronRight } from "lucide-react";
-import { useVisibleAnimation } from "../../hooks";
-import { useCarousel } from "../../hooks/use-carousel.hook";
-import { HeroItems } from "../../lib/constants";
-import { cn } from "../../lib/utils";
-import UiStateStore from "../../stores/ui-state.store";
-import { AnimatedDiv, Button } from "../ui";
 import {
   ANIMATION_DELAY_1000,
   ANIMATION_DELAY_1200,
@@ -15,11 +9,15 @@ import {
   ANIMATION_DELAY_600,
   ANIMATION_DELAY_800,
 } from "../../constants";
+import { useCarousel } from "../../hooks/use-carousel.hook";
+import { HeroItems } from "../../lib/constants";
+import { cn } from "../../lib/utils";
+import UiStateStore from "../../stores/ui-state.store";
+import { AnimatedDiv, Button } from "../ui";
 const carouselId = "hero-carousel-mobile";
 
 export function HeroMobile() {
   const { isLoadingPage } = UiStateStore();
-  const { isVisible } = useVisibleAnimation();
   const { emblaRef, emblaApi, selectedIndex } = useCarousel();
 
   return (
@@ -47,7 +45,7 @@ export function HeroMobile() {
         <div className="flex flex-col gap-8">
           <div className="space-y-6">
             <div className="space-y-4">
-              <AnimatedDiv delay={ANIMATION_DELAY_200} isVisible={isVisible}>
+              <AnimatedDiv delay={ANIMATION_DELAY_200}>
                 <h1
                   id="hero-title"
                   className={cn(
@@ -60,7 +58,7 @@ export function HeroMobile() {
                 </h1>
               </AnimatedDiv>
 
-              <AnimatedDiv delay={ANIMATION_DELAY_400} isVisible={isVisible}>
+              <AnimatedDiv delay={ANIMATION_DELAY_400}>
                 <p
                   className={cn(
                     "max-w-[40ch] lg:w-full text-white/90 text-lg leading-relaxed",
@@ -76,7 +74,6 @@ export function HeroMobile() {
             <div className="space-y-3">
               <AnimatedDiv
                 delay={ANIMATION_DELAY_600}
-                isVisible={isVisible}
                 animationType="fade-right"
               >
                 <div className="flex items-center gap-3">
@@ -88,7 +85,6 @@ export function HeroMobile() {
               </AnimatedDiv>
               <AnimatedDiv
                 delay={ANIMATION_DELAY_800}
-                isVisible={isVisible}
                 animationType="fade-right"
               >
                 <div className="flex items-center gap-3">
@@ -100,7 +96,6 @@ export function HeroMobile() {
               </AnimatedDiv>
               <AnimatedDiv
                 delay={ANIMATION_DELAY_1000}
-                isVisible={isVisible}
                 animationType="fade-right"
               >
                 <div className="flex items-center gap-3">
@@ -116,22 +111,18 @@ export function HeroMobile() {
 
         <div className="flex flex-col gap-6 pb-8">
           <div className="flex flex-col gap-4">
-            <AnimatedDiv delay={ANIMATION_DELAY_1200} isVisible={isVisible}>
+            <AnimatedDiv delay={ANIMATION_DELAY_1200}>
               <Button aria-controls={carouselId}>
                 Garantir Minha Vaga <ChevronRight className="w-5 h-5 ml-2" />
               </Button>
             </AnimatedDiv>
 
-            <AnimatedDiv delay={ANIMATION_DELAY_1400} isVisible={isVisible}>
+            <AnimatedDiv delay={ANIMATION_DELAY_1400}>
               <Button variant="outline">Ver Próximas Datas</Button>
             </AnimatedDiv>
           </div>
 
-          <AnimatedDiv
-            delay={ANIMATION_DELAY_1600}
-            isVisible={isVisible}
-            animationType="fade-down"
-          >
+          <AnimatedDiv delay={ANIMATION_DELAY_1600} animationType="fade-down">
             <div className="flex justify-center gap-2">
               {HeroItems.map((item, idx) => (
                 <button

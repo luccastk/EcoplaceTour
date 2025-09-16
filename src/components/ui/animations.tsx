@@ -1,20 +1,22 @@
 import { cn } from "../../lib/utils";
+import { useVisibleAnimation } from "../../hooks/use-visible-animation.hook";
 
 interface AnimatedDivProps {
   children: React.ReactNode;
-  delay: number;
-  isVisible: boolean;
+  delay?: number;
   className?: string;
   animationType?: "fade-up" | "fade-right" | "fade-down" | "fade-left";
+  threshold?: number;
 }
 
 export function AnimatedDiv({
   children,
-  delay,
-  isVisible,
+  delay = 0,
   className = "",
   animationType = "fade-up",
+  threshold = 0.1,
 }: Readonly<AnimatedDivProps>) {
+  const { isVisible, ref } = useVisibleAnimation(threshold);
   const getAnimationClasses = () => {
     const baseClasses = "transition-all duration-1000 ease-out";
 
@@ -51,6 +53,7 @@ export function AnimatedDiv({
 
   return (
     <div
+      ref={ref}
       className={cn(getAnimationClasses(), className)}
       style={{ transitionDelay: `${delay}ms` }}
     >

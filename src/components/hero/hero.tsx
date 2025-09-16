@@ -3,24 +3,22 @@ import Fade from "embla-carousel-fade";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronRight } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
-import { useScreenDetector } from "../../hooks/use-screen-detector.hook";
-import { HeroItems } from "../../lib/constants";
-import { cn } from "../../lib/utils";
-import { AnimatedDiv, Button } from "../ui";
-import { HeroMobile } from "./hero-mobile";
 import {
   ANIMATION_DELAY_200,
   ANIMATION_DELAY_400,
   ANIMATION_DELAY_600,
   ANIMATION_DELAY_800,
 } from "../../constants";
-import { useVisibleAnimation } from "../../hooks";
+import { useScreenDetector } from "../../hooks/use-screen-detector.hook";
+import { HeroItems } from "../../lib/constants";
+import { cn } from "../../lib/utils";
+import { AnimatedDiv, Button } from "../ui";
+import { HeroMobile } from "./hero-mobile";
 
 const carouselId = "hero-carousel";
 
 export function Hero() {
   const [selectedSubheadline, setSelectedSubheadline] = useState(0);
-  const { isVisible } = useVisibleAnimation();
   const { isDesktop } = useScreenDetector();
 
   const [emblaRefDesktop, emblaApiDesktop] = useEmblaCarousel({ loop: true }, [
@@ -59,10 +57,7 @@ export function Hero() {
             <div className="flex flex-col h-full gap-16 w-full">
               <div>
                 <div className="space-y-4">
-                  <AnimatedDiv
-                    delay={ANIMATION_DELAY_200}
-                    isVisible={isVisible}
-                  >
+                  <AnimatedDiv delay={ANIMATION_DELAY_200}>
                     <h1
                       id="hero-title"
                       className="text-3xl md:text-5xl font-semibold font-serif leading-tight text-text"
@@ -72,10 +67,7 @@ export function Hero() {
                     </h1>
                   </AnimatedDiv>
 
-                  <AnimatedDiv
-                    delay={ANIMATION_DELAY_400}
-                    isVisible={isVisible}
-                  >
+                  <AnimatedDiv delay={ANIMATION_DELAY_400}>
                     <p className="w-[40ch] text-base md:text-lg text-muted-foreground">
                       Entre nos bastidores de empresas e instituições,
                       conectando teoria à prática com experiências imersivas.{" "}
@@ -90,7 +82,6 @@ export function Hero() {
                 <AnimatedDiv
                   delay={ANIMATION_DELAY_600}
                   animationType="fade-left"
-                  isVisible={isVisible}
                 >
                   <Button
                     className="px-6 py-6 text-base"
@@ -103,7 +94,6 @@ export function Hero() {
                 <AnimatedDiv
                   delay={ANIMATION_DELAY_600}
                   animationType="fade-right"
-                  isVisible={isVisible}
                 >
                   <Button variant="outline" className="px-6 py-6 text-base">
                     Ver Próximas Datas
@@ -111,11 +101,7 @@ export function Hero() {
                 </AnimatedDiv>
               </div>
 
-              <AnimatedDiv
-                delay={ANIMATION_DELAY_800}
-                animationType="fade-up"
-                isVisible={isVisible}
-              >
+              <AnimatedDiv delay={ANIMATION_DELAY_800} animationType="fade-up">
                 <div className="space-y-7">
                   <div className="bottom-0 left-0 right-0 w-full h-[4px] bg-border relative overflow-hidden">
                     <span
