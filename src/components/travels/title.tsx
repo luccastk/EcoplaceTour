@@ -18,7 +18,7 @@ export function TrevelsTitle({
         </h1>
         <p className="text-gray-600 text-lg mt-2 pr-20 ">
           Além das visitas técnicas, organizamos viagens completas para levar
-          você e sua família se conectarem com .
+          você e sua família se conectarem com experiências únicas.
         </p>
       </div>
 

@@ -109,7 +109,7 @@ export function TechnicalVisits() {
           </div>
         </div>
 
-        <div className="flex flex-col items-center gap-4 mt-6">
+        <div className="flex flex-col items-center gap-4 mt-2">
           <div className="flex justify-center gap-2">
             {scrollSnaps.map((snap, index) => (
               <button

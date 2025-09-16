@@ -16,9 +16,12 @@ const CTAForm = () => {
         </div>
 
         <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-border/50">
-          <form className="max-w-md mx-auto space-y-4">
-            <div className="space-y-2">
-              <label htmlFor="name" className="text-sm font-medium text-text">
+          <form className="max-w-md mx-auto space-y-6">
+            <div>
+              <label
+                htmlFor="name"
+                className="text-sm font-medium text-text mb-2 block"
+              >
                 Nome completo
               </label>
               <Input
@@ -29,8 +32,11 @@ const CTAForm = () => {
               />
             </div>
 
-            <div className="space-y-2">
-              <label htmlFor="email" className="text-sm font-medium text-text">
+            <div>
+              <label
+                htmlFor="email"
+                className="text-sm font-medium text-text mb-2 block"
+              >
                 E-mail
               </label>
               <Input
@@ -46,14 +52,13 @@ const CTAForm = () => {
               size="lg"
               className="w-full h-12 text-base font-semibold bg-gradient-to-r from-primary to-secundary hover:from-primary/90 hover:to-secundary/90 shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              🚀 Quero receber as novidades
+              me avise!
             </Button>
           </form>
 
           <div className="mt-6 text-center">
-            <p className="text-xs text-muted-foreground">
-              🔒 Seus dados estão seguros conosco • ✉️ Sem spam, apenas conteúdo
-              relevante
+            <p className="text-xs text-center text-muted-foreground">
+              🔒 Seus dados estão seguros conosco
             </p>
           </div>
         </div>
@@ -69,7 +74,7 @@ export function Footer() {
 
       <footer className="space-y-8 py-20 bg-gradient-to-br from-primary/20 to-secundary/5 px-6 xl:px-20">
         <h1 className="font-semibold font-serif text-center mb-12 relative after:content-[''] after:absolute after:-bottom-4 after:left-1/2 after:w-28 after:-translate-x-1/2 after:h-[2px] after:bg-primary">
-          EcoplaceTour - Experiências que Conectam Teoria e Prática!
+          EcoPlaceTour Experiências que Conectam Teoria e Prática!
         </h1>
 
         <div className="space-y-4">
@@ -83,7 +88,7 @@ export function Footer() {
           </p>
         </div>
 
-        <div className="space-y-4 mb-24">
+        <div className="space-y-4 mb-12 md:mb-24">
           <h2 className="relative font-serif after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-10 after:h-[2px] after:bg-primary">
             Quer acelerar sua{" "}
             <span className="text-primary font-bold"> carreira?</span>
@@ -96,7 +101,7 @@ export function Footer() {
 
         <div className="flex flex-col items-center justify-center gap-4 lg:w-2xl mx-auto border-t border-gray-500/50 pt-12">
           <img src={Logo} alt="Logo" className="w-20 h-20 shrink-0" />
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-muted-foreground text-center">
             © {new Date().getFullYear()} EcoplaceTour. Todos os direitos
             reservados.
           </p>

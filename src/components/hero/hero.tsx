@@ -123,10 +123,7 @@ export function Hero() {
                   <div className="space-y-1">
                     {HeroItems[selectedSubheadline]?.subheadlines.map(
                       (subheadline) => (
-                        <p
-                          key={subheadline}
-                          className="text-muted-foreground"
-                        >
+                        <p key={subheadline} className="text-muted-foreground">
                           {subheadline}
                         </p>
                       )

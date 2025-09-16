@@ -34,7 +34,7 @@ export function HeroMobile() {
   }, [emblaApiMobile]);
 
   return (
-    <div className="min-h-[100vh] relative">
+    <div className="relative min-h-[100vh]">
       <div
         id={carouselId}
         className="absolute inset-0 overflow-hidden"
@@ -55,15 +55,7 @@ export function HeroMobile() {
       </div>
 
       <div className="relative z-10 flex flex-col justify-between min-h-[90vh] px-6">
-        <div className="flex justify-center pt-4">
-          <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
-            <span className="text-white font-medium text-sm">
-              Ecoplace Tour
-            </span>
-          </div>
-        </div>
-
-        <div className="flex flex-col gap-8 pb-8">
+        <div className="flex flex-col gap-8 pt-30">
           <div className="space-y-6">
             <div className="space-y-4">
               <h1

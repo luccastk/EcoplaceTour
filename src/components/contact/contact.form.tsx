@@ -62,7 +62,7 @@ export function ContactForm() {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Seu nome completo"
-                  className="w-full"
+                  className="w-full h-12"
                 />
               </div>
 
@@ -81,7 +81,7 @@ export function ContactForm() {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="seu@email.com"
-                  className="w-full"
+                  className="w-full h-12"
                 />
               </div>
             </div>
@@ -101,7 +101,7 @@ export function ContactForm() {
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="(11) 99999-9999"
-                  className="w-full"
+                  className="w-full h-12"
                 />
               </div>
 
@@ -119,7 +119,7 @@ export function ContactForm() {
                   value={formData.institution}
                   onChange={handleChange}
                   placeholder="Nome da sua instituição"
-                  className="w-full"
+                  className="w-full h-12"
                 />
               </div>
             </div>
@@ -137,7 +137,7 @@ export function ContactForm() {
                 required
                 value={formData.service}
                 onChange={handleChange}
-                className="w-full px-3 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-background"
+                className="w-full h-12 px-3 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-background"
               >
                 <option value="">Selecione um serviço</option>
                 <option value="visitas-tecnicas">
@@ -175,15 +175,14 @@ export function ContactForm() {
                 type="submit"
                 className="w-full bg-primary hover:bg-primary/90 text-white py-4 rounded-xl font-semibold text-lg transition-colors duration-200"
               >
-                Quero Solicitar Minha Viagem
+                Enviar Solicitação
               </Button>
             </div>
           </form>
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 t-6">
-            <p className="text-xs text-muted-foreground mt-6">
-              🔒 Seus dados estão seguros conosco • ✉️ Sem spam, apenas conteúdo
-              relevante
+            <p className="text-xs text-center text-muted-foreground mt-6">
+              🔒 Seus dados estão seguros conosco
             </p>
           </div>
         </div>
