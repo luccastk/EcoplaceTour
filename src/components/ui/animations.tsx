@@ -5,7 +5,7 @@ interface AnimatedDivProps {
   delay: number;
   isVisible: boolean;
   className?: string;
-  animationType?: "fade-up" | "fade-right" | "fade-down";
+  animationType?: "fade-up" | "fade-right" | "fade-down" | "fade-left";
 }
 
 export function AnimatedDiv({
@@ -25,6 +25,7 @@ export function AnimatedDiv({
           !isVisible && "opacity-0 translate-y-6",
           isVisible && "opacity-100 translate-y-0"
         );
+
       case "fade-right":
         return cn(
           baseClasses,
@@ -36,6 +37,12 @@ export function AnimatedDiv({
           baseClasses,
           !isVisible && "opacity-0 translate-y-4",
           isVisible && "opacity-100 translate-y-0"
+        );
+      case "fade-left":
+        return cn(
+          baseClasses,
+          !isVisible && "opacity-0 -translate-x-4",
+          isVisible && "opacity-100 -translate-x-0"
         );
       default:
         return baseClasses;
