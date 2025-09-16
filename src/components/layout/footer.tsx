@@ -73,38 +73,42 @@ export function Footer() {
       <CTAForm />
 
       <footer className="space-y-8 py-20 bg-gradient-to-br from-primary/20 to-secundary/5 px-6 xl:px-20">
-        <h1 className="font-semibold font-serif text-center mb-12 relative after:content-[''] after:absolute after:-bottom-4 after:left-1/2 after:w-28 after:-translate-x-1/2 after:h-[2px] after:bg-primary">
-          EcoPlaceTour Experiências que Conectam Teoria e Prática!
-        </h1>
+        <div className="max-w-6xl mx-auto flex flex-col gap-8">
+          <h1 className="font-semibold font-serif text-center mb-12 relative after:content-[''] after:absolute after:-bottom-4 after:left-1/2 after:w-28 after:-translate-x-1/2 after:h-[2px] after:bg-primary">
+            EcoPlaceTour Experiências que Conectam Teoria e Prática!
+          </h1>
 
-        <div className="space-y-4">
-          <h2 className="relative font-serif after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-10 after:h-[2px] after:bg-primary">
-            Conheça nossa{" "}
-            <span className="text-primary font-bold">proposta!</span>
-          </h2>
-          <p>
-            Nossa maior satisfação é levar você aos bastidores de empresas e
-            instituições, transformando conhecimento em experiência real.
-          </p>
-        </div>
+          <div className="flex gap-12">
+            <div className="space-y-4">
+              <h2 className="relative font-serif after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-10 after:h-[2px] after:bg-primary">
+                Conheça nossa{" "}
+                <span className="text-primary font-bold">proposta!</span>
+              </h2>
+              <p>
+                Nossa maior satisfação é levar você aos bastidores de empresas e
+                instituições, transformando conhecimento em experiência real.
+              </p>
+            </div>
 
-        <div className="space-y-4 mb-12 md:mb-24">
-          <h2 className="relative font-serif after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-10 after:h-[2px] after:bg-primary">
-            Quer acelerar sua{" "}
-            <span className="text-primary font-bold"> carreira?</span>
-          </h2>
-          <p>
-            Fale com nossa equipe e receba as próximas datas, roteiros e vagas
-            disponíveis para visitas técnicas e viagens imersivas.
-          </p>
-        </div>
+            <div className="space-y-4 mb-12 ">
+              <h2 className="relative font-serif after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-10 after:h-[2px] after:bg-primary">
+                Quer acelerar sua{" "}
+                <span className="text-primary font-bold"> carreira?</span>
+              </h2>
+              <p>
+                Fale com nossa equipe e receba as próximas datas, roteiros e
+                vagas disponíveis para visitas técnicas e viagens imersivas.
+              </p>
+            </div>
+          </div>
 
-        <div className="flex flex-col items-center justify-center gap-4 lg:w-2xl mx-auto border-t border-gray-500/50 pt-12">
-          <img src={Logo} alt="Logo" className="w-20 h-20 shrink-0" />
-          <p className="text-sm text-muted-foreground text-center">
-            © {new Date().getFullYear()} EcoplaceTour. Todos os direitos
-            reservados.
-          </p>
+          <div className="flex flex-col items-center justify-center gap-4 lg:w-2xl mx-auto border-t border-gray-500/50 pt-12">
+            <img src={Logo} alt="Logo" className="w-20 h-20 shrink-0" />
+            <p className="text-sm text-muted-foreground text-center">
+              © {new Date().getFullYear()} EcoplaceTour. Todos os direitos
+              reservados.
+            </p>
+          </div>
         </div>
       </footer>
     </>

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Footer, Navbar } from "./components/layout";
+import { ScrollToTop } from "./components/ScrollToTop";
 import { cn } from "./lib/utils";
 import { AboutUs, Home, Purpose } from "./pages";
 import UiStateStore from "./stores/ui-state.store";
@@ -30,6 +31,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="min-h-screen overflow-x-hidden">
         <div
           className={cn(
