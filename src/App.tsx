@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { cn } from "./lib/utils";
 import { Footer, Navbar } from "./components/layout";
-import { AboutUs, ContactPage, Home, Purpose } from "./pages";
+import { cn } from "./lib/utils";
+import { AboutUs, Home, Purpose } from "./pages";
 import UiStateStore from "./stores/ui-state.store";
 
 function App() {
@@ -43,7 +43,6 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<AboutUs />} />
               <Route path="/purpose" element={<Purpose />} />
-              <Route path="/contact" element={<ContactPage />} />
             </Routes>
           </main>
           <Footer />

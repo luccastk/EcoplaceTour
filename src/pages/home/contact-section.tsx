@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Button, Input, Textarea } from "../ui";
+import { Button, Input, Textarea } from "../../components/ui";
 
-export function ContactForm() {
+export function ContactSection() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",

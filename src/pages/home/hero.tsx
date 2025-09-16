@@ -12,7 +12,7 @@ import {
 import { useScreenDetector } from "../../hooks/use-screen-detector.hook";
 import { HeroItems } from "../../lib/constants";
 import { cn } from "../../lib/utils";
-import { AnimatedDiv, Button } from "../ui";
+import { AnimatedDiv, Button } from "../../components/ui";
 import { HeroMobile } from "./hero-mobile";
 
 const carouselId = "hero-carousel";
@@ -53,59 +53,60 @@ export function Hero() {
     >
       {isDesktop ? (
         <div className="grid grid-cols-2 min-h-svh">
-          <div className="flex items-start pt-36 pb-10 px-20 justify-center">
-            <div className="flex flex-col gap-8 w-full">
-              <div>
-                <div className="space-y-4">
-                  <AnimatedDiv delay={ANIMATION_DELAY_200}>
-                    <h1
-                      id="hero-title"
-                      className="text-3xl md:text-5xl font-semibold font-serif leading-tight text-text"
-                    >
-                      Viagens e Visitas Técnicas que Levam Seu Conhecimento Mais
-                      Longe
-                    </h1>
-                  </AnimatedDiv>
+          <div className="flex items-center pt-32 pb-16 px-16 xl:px-20 justify-center">
+            <div className="flex flex-col gap-12 w-full max-w-3xl">
+              <div className="space-y-8">
+                <AnimatedDiv delay={ANIMATION_DELAY_200}>
+                  <h1
+                    id="hero-title"
+                    className="text-4xl xl:text-6xl font-bold font-serif leading-tight text-text"
+                  >
+                    Viagens e Visitas Técnicas que Levam Seu Conhecimento Mais
+                    Longe
+                  </h1>
+                </AnimatedDiv>
 
-                  <AnimatedDiv delay={ANIMATION_DELAY_400}>
-                    <p className="w-[40ch] text-base md:text-lg text-muted-foreground">
-                      Entre nos bastidores de empresas e instituições,
-                      conectando teoria à prática com experiências imersivas.{" "}
-                      <br /> Aprenda com especialistas, viaje com um grupo
-                      selecionado e acelere sua carreira com networking real.
-                    </p>
-                  </AnimatedDiv>
-                </div>
+                <AnimatedDiv delay={ANIMATION_DELAY_400}>
+                  <p className="text-lg xl:text-xl text-muted-foreground leading-relaxed max-w-[50ch]">
+                    Entre nos bastidores de empresas e instituições, conectando
+                    teoria à prática com experiências imersivas. <br /> Aprenda
+                    com especialistas, viaje com um grupo selecionado e acelere
+                    sua carreira com networking real.
+                  </p>
+                </AnimatedDiv>
               </div>
 
-              <div className="flex items-center gap-3">
+              <div className="flex flex-col sm:flex-row items-start gap-4">
                 <AnimatedDiv
                   delay={ANIMATION_DELAY_600}
                   animationType="fade-left"
                 >
                   <Button
-                    className="px-6 py-6 text-base"
+                    className="px-8 py-4 text-base font-semibold"
                     aria-controls={carouselId}
                   >
                     Garantir Minha Vaga{" "}
-                    <ChevronRight className="w-5 h-5 ml-1" />
+                    <ChevronRight className="w-5 h-5 ml-2" />
                   </Button>
                 </AnimatedDiv>
                 <AnimatedDiv
                   delay={ANIMATION_DELAY_600}
                   animationType="fade-right"
                 >
-                  <Button variant="outline" className="px-6 py-6 text-base">
+                  <Button
+                    variant="outline"
+                    className="px-8 py-4 text-base font-semibold"
+                  >
                     Ver Próximas Datas
                   </Button>
                 </AnimatedDiv>
               </div>
 
               <AnimatedDiv delay={ANIMATION_DELAY_800} animationType="fade-up">
-                <div className="space-y-4">
-                  <div className="bottom-0 left-0 right-0 w-full h-[4px] bg-border relative overflow-hidden">
+                <div className="space-y-6">
+                  <div className="w-full h-[3px] bg-border relative overflow-hidden rounded-full">
                     <span
-                      className="absolute top-0 h-full bg-primary transition-all duration-500 ease-in-out"
+                      className="absolute top-0 h-full bg-primary transition-all duration-500 ease-in-out rounded-full"
                       style={{
                         width: `${100 / HeroItems.length}%`,
                         left: `${
@@ -117,9 +118,9 @@ export function Hero() {
 
                   <nav
                     aria-label="Selecionar destaque do hero"
-                    className="flex flex-col gap-4"
+                    className="space-y-6"
                   >
-                    <ul className="grid grid-cols-3 gap-4">
+                    <ul className="grid grid-cols-3 gap-6">
                       {HeroItems.map((item, idx) => (
                         <li key={item.title}>
                           <button
@@ -128,8 +129,9 @@ export function Hero() {
                               setSelectedSubheadline(idx);
                             }}
                             className={cn(
-                              "hero-nav-button text-sm md:text-base underline-offset-4 focus:outline-none focus:text-primary cursor-pointer text-muted-foreground",
-                              selectedSubheadline === idx && "text-primary"
+                              "hero-nav-button text-sm xl:text-base underline-offset-4 focus:outline-none focus:text-primary cursor-pointer text-muted-foreground transition-colors duration-200 hover:text-primary/80",
+                              selectedSubheadline === idx &&
+                                "text-primary font-semibold"
                             )}
                             aria-controls={carouselId}
                             aria-current={
@@ -142,12 +144,12 @@ export function Hero() {
                       ))}
                     </ul>
 
-                    <div className="space-y-1">
+                    <div className="space-y-2">
                       {HeroItems[selectedSubheadline]?.subheadlines.map(
                         (subheadline) => (
                           <p
                             key={subheadline}
-                            className="text-muted-foreground"
+                            className="text-muted-foreground text-sm xl:text-base leading-relaxed"
                           >
                             {subheadline}
                           </p>

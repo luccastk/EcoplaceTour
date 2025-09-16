@@ -13,7 +13,7 @@ import { useCarousel } from "../../hooks/use-carousel.hook";
 import { HeroItems } from "../../lib/constants";
 import { cn } from "../../lib/utils";
 import UiStateStore from "../../stores/ui-state.store";
-import { AnimatedDiv, Button } from "../ui";
+import { AnimatedDiv, Button } from "../../components/ui";
 const carouselId = "hero-carousel-mobile";
 
 export function HeroMobile() {
@@ -41,15 +41,15 @@ export function HeroMobile() {
         </div>
       </div>
 
-      <div className="relative z-10 flex flex-col justify-between px-6 pt-30 h-svh">
-        <div className="flex flex-col gap-8">
-          <div className="space-y-6">
-            <div className="space-y-4">
+      <div className="relative z-10 flex flex-col justify-between px-6 pt-32 pb-8 h-svh">
+        <div className="flex flex-col gap-12">
+          <div className="space-y-10">
+            <div className="space-y-8">
               <AnimatedDiv delay={ANIMATION_DELAY_200}>
                 <h1
                   id="hero-title"
                   className={cn(
-                    "max-w-[20ch] lg:w-full text-4xl font-bold leading-tight text-white",
+                    "max-w-[24ch] text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white",
                     isLoadingPage && "blur-sm opacity-0"
                   )}
                 >
@@ -61,7 +61,7 @@ export function HeroMobile() {
               <AnimatedDiv delay={ANIMATION_DELAY_400}>
                 <p
                   className={cn(
-                    "max-w-[40ch] lg:w-full text-white/90 text-lg leading-relaxed",
+                    "max-w-[45ch] text-white/90 text-lg md:text-xl lg:text-2xl leading-relaxed",
                     isLoadingPage && "blur-sm translate-y-10"
                   )}
                 >
@@ -71,14 +71,14 @@ export function HeroMobile() {
               </AnimatedDiv>
             </div>
 
-            <div className="space-y-3">
+            <div className="space-y-5">
               <AnimatedDiv
                 delay={ANIMATION_DELAY_600}
                 animationType="fade-right"
               >
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
-                  <span className="text-white/80">
+                <div className="flex items-center gap-4">
+                  <div className="w-3 h-3 bg-white rounded-full flex-shrink-0"></div>
+                  <span className="text-white/90 text-base md:text-lg lg:text-xl">
                     Aprenda com especialistas
                   </span>
                 </div>
@@ -87,9 +87,9 @@ export function HeroMobile() {
                 delay={ANIMATION_DELAY_800}
                 animationType="fade-right"
               >
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
-                  <span className="text-white/80">
+                <div className="flex items-center gap-4">
+                  <div className="w-3 h-3 bg-white rounded-full flex-shrink-0"></div>
+                  <span className="text-white/90 text-base md:text-lg lg:text-xl">
                     Viaje com grupo selecionado
                   </span>
                 </div>
@@ -98,9 +98,9 @@ export function HeroMobile() {
                 delay={ANIMATION_DELAY_1000}
                 animationType="fade-right"
               >
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
-                  <span className="text-white/80">
+                <div className="flex items-center gap-4">
+                  <div className="w-3 h-3 bg-white rounded-full flex-shrink-0"></div>
+                  <span className="text-white/90 text-base md:text-lg lg:text-xl">
                     Networking real e estratégico
                   </span>
                 </div>
@@ -109,29 +109,37 @@ export function HeroMobile() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-6 pb-8">
-          <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-5">
             <AnimatedDiv delay={ANIMATION_DELAY_1200}>
-              <Button aria-controls={carouselId}>
+              <Button
+                className="w-full py-5 text-lg font-semibold"
+                aria-controls={carouselId}
+              >
                 Garantir Minha Vaga <ChevronRight className="w-5 h-5 ml-2" />
               </Button>
             </AnimatedDiv>
 
             <AnimatedDiv delay={ANIMATION_DELAY_1400}>
-              <Button variant="outline">Ver Próximas Datas</Button>
+              <Button
+                variant="outline"
+                className="w-full py-5 text-lg font-semibold"
+              >
+                Ver Próximas Datas
+              </Button>
             </AnimatedDiv>
           </div>
 
           <AnimatedDiv delay={ANIMATION_DELAY_1600} animationType="fade-down">
-            <div className="flex justify-center gap-2">
+            <div className="flex justify-center gap-4">
               {HeroItems.map((item, idx) => (
                 <button
                   key={item.title}
                   onClick={() => emblaApi?.scrollTo(idx)}
                   className={cn(
-                    "w-2 h-2 rounded-full transition-all duration-300",
+                    "w-3 h-3 rounded-full transition-all duration-300",
                     selectedIndex === idx
-                      ? "bg-white w-8"
+                      ? "bg-white w-12"
                       : "bg-white/40 hover:bg-white/60"
                   )}
                   aria-label={`Ir para slide ${idx + 1}`}

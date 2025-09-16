@@ -1,9 +1,9 @@
-import { ContactForm } from "../../components/contact";
-import { Hero } from "../../components/hero";
 import { Service } from "../../components/service";
 import { TechnicalVisits } from "../../components/technical-visits";
 import { Trevels } from "../../components/travels";
 import { AboutSection } from "./about-section";
+import { ContactSection } from "./contact-section";
+import { Hero } from "./hero";
 
 export function Home() {
   return (
@@ -13,7 +13,7 @@ export function Home() {
       <TechnicalVisits />
       <Service />
       <Trevels />
-      <ContactForm />
+      <ContactSection />
     </>
   );
 }
