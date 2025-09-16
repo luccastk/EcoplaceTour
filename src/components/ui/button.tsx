@@ -1,7 +1,7 @@
-import React from "react";
-import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "../../lib/utils";
 import { Slot } from "@radix-ui/react-slot";
+import { cva, type VariantProps } from "class-variance-authority";
+import React from "react";
+import { cn } from "../../lib/utils";
 
 interface ButtonProps
   extends React.ComponentProps<"button">,
@@ -25,6 +25,8 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         destructive:
           "bg-red-500 text-white shadow-sm hover:bg-red-600 hover:shadow-md active:scale-[0.98]",
+        solid:
+          "bg-primary text-white shadow-sm hover:bg-primary/90 hover:shadow-md",
       },
       size: {
         sm: "h-8 px-3 text-xs",
@@ -43,6 +45,7 @@ const buttonVariants = cva(
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button";
+
     return (
       <Comp
         className={cn(buttonVariants({ variant, size, className }))}

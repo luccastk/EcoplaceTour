@@ -8,7 +8,7 @@ import { Button } from "../ui/button";
 const links = [
   { label: "Home", to: "/" },
   { label: "Sobre Nós", to: "/about" },
-  { label: "Ecoplace Edu ", to: "/edu" },
+  { label: "Ecoplace Edu ", to: "/educa" },
   { label: "Ecoplace Travel", to: "/travel" },
   { label: "Propósito", to: "/purpose" },
   { label: "Orçamentos", to: "/contact" },

@@ -6,8 +6,9 @@ import { TechnicalVisitItems } from "../../lib/constants";
 import { Button } from "../ui";
 import { AnimatedDiv } from "../ui/animations";
 import { TechnicalVisitsTitle } from "./title";
+import { EducaCard } from "../ui";
 
-export function TechnicalVisits() {
+export function EducaVisits() {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
 
@@ -68,50 +69,17 @@ export function TechnicalVisits() {
                   delay={ANIMATION_DELAY_400 + index * 100}
                   className="flex-none w-full md:w-80 lg:w-96"
                 >
-                  <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
-                    <div className="relative h-64 overflow-hidden">
-                      <img
-                        src={visit.image}
-                        alt={visit.title}
-                        className="w-full h-full object-cover transition-transform duration-300"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                    </div>
-
-                    <div className="p-6">
-                      <div className="mb-4">
-                        <h3 className="font-bold text-xl text-gray-900 mb-2">
-                          {visit.title}
-                        </h3>
-                        <p className="text-primary font-semibold text-sm mb-1">
-                          {visit.company}
-                        </p>
-                        <p className="text-gray-600 text-sm mb-3">
-                          {visit.location} • {visit.duration}
-                        </p>
-                      </div>
-
-                      <p className="text-gray-700 text-sm mb-4 leading-relaxed">
-                        {visit.description}
-                      </p>
-
-                      <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                        <div className="flex items-center gap-2">
-                          <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                          <span className="text-sm text-gray-600">
-                            {visit.availableSpots} vagas disponíveis
-                          </span>
-                        </div>
-                        <span className="text-sm font-semibold text-primary">
-                          {visit.date}
-                        </span>
-                      </div>
-
-                      <button className="w-full mt-4 bg-primary text-white py-3 rounded-xl font-semibold hover:bg-primary/90 transition-colors duration-200">
-                        Inscrever-se
-                      </button>
-                    </div>
-                  </div>
+                  <EducaCard
+                    image={visit.image}
+                    imageAlt={visit.title}
+                    title={visit.title}
+                    company={visit.company}
+                    location={visit.location}
+                    duration={visit.duration}
+                    description={visit.description}
+                    availableSpots={visit.availableSpots}
+                    date={visit.date}
+                  />
                 </AnimatedDiv>
               ))}
             </div>

@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Footer, Navbar } from "./components/layout";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { cn } from "./lib/utils";
-import { AboutUs, Home, Purpose } from "./pages";
+import { AboutUs, Educa, Home, Purpose } from "./pages";
 import UiStateStore from "./stores/ui-state.store";
 
 function App() {
@@ -45,6 +45,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<AboutUs />} />
               <Route path="/purpose" element={<Purpose />} />
+              <Route path="/educa" element={<Educa />} />
             </Routes>
           </main>
           <Footer />
