@@ -10,7 +10,6 @@ import {
   ANIMATION_DELAY_800,
 } from "../../constants";
 import { useCarousel } from "../../hooks/use-carousel.hook";
-import { useMobileViewport } from "../../hooks/use-mobile-viewport.hook";
 import { HeroItems } from "../../lib/constants";
 import { cn } from "../../lib/utils";
 import UiStateStore from "../../stores/ui-state.store";
@@ -20,10 +19,9 @@ const carouselId = "hero-carousel-mobile";
 export function HeroMobile() {
   const { isLoadingPage } = UiStateStore();
   const { emblaRef, emblaApi, selectedIndex } = useCarousel();
-  useMobileViewport(); // Initialize mobile viewport height calculation
 
   return (
-    <div className="relative min-h-[var(--mobile-vh)]">
+    <div className="relative min-h-dvh">
       <div
         id={carouselId}
         className="absolute inset-0 overflow-hidden"
@@ -34,7 +32,7 @@ export function HeroMobile() {
           {HeroItems.map((item) => (
             <div
               key={item.title}
-              className="flex-[0_0_100%] min-w-0 h-[var(--mobile-vh)] relative"
+              className="flex-[0_0_100%] min-w-0 h-dvh relative"
             >
               <item.children />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/80" />
@@ -43,7 +41,7 @@ export function HeroMobile() {
         </div>
       </div>
 
-      <div className="relative z-10 flex flex-col justify-between px-6 pt-30 min-h-[var(--mobile-vh)]">
+      <div className="relative z-10 flex flex-col justify-between px-6 pt-30 min-h-dvh">
         <div className="flex flex-col gap-8">
           <div className="space-y-6">
             <div className="space-y-4">
