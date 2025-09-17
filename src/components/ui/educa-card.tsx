@@ -30,7 +30,7 @@ export function EducaCard({
   if (view === "list") {
     return (
       <div className="bg-background py-3 px-5 rounded-xl overflow-hidden border border-border hover:shadow-sm transition-all duration-300 flex gap-4">
-        <div className="w-xl flex flex-col justify-between gap-4">
+        <div className="w-full md:w-xl flex flex-col justify-between gap-4">
           <div className="flex items-center gap-3">
             <img
               src={image}
