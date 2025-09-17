@@ -5,8 +5,8 @@ import {
   ANIMATION_DELAY_0,
   ANIMATION_DELAY_200,
   ANIMATION_DELAY_400,
-} from "../../../constants";
-import { TravelItems } from "../../../lib/constants";
+  TravelItems,
+} from "../../../lib/constants";
 import { Button } from "../../ui";
 import { AnimatedDiv } from "../../ui/animations";
 

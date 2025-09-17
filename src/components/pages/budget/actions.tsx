@@ -1,5 +1,5 @@
 import { MapPin } from "lucide-react";
-import { ANIMATION_DELAY_200 } from "../../../constants";
+import { ANIMATION_DELAY_200 } from "../../../lib/constants";
 import { AnimatedDiv } from "../../ui/animations";
 import {
   Select,

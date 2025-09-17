@@ -107,7 +107,7 @@ export function TravelsFilters() {
             </Button>
           </DropdownMenuTrigger>
 
-          <DropdownMenuContent className="w-64 md:ml-0 md:mr-6 xl:mr-20 ml-6">
+          <DropdownMenuContent className="w-64 md:ml-0 md:mr-6 xl:mr-20 ml-6 mt-1">
             <div className="px-3 py-2">
               <h4 className="text-sm font-semibold text-text/80">
                 Ordenar por

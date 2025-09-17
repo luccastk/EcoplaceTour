@@ -6,8 +6,8 @@ import {
   ANIMATION_DELAY_0,
   ANIMATION_DELAY_200,
   ANIMATION_DELAY_400,
-} from "../../../constants";
-import { TechnicalVisitItems } from "../../../lib/constants";
+  TechnicalVisitItems,
+} from "../../../lib/constants";
 import { Button, EducaCard } from "../../ui";
 import { AnimatedDiv } from "../../ui/animations";
 

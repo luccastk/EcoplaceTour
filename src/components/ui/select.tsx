@@ -98,4 +98,16 @@ function SelectItem({
   );
 }
 
-export { Select, SelectTrigger, SelectContent, SelectItem };
+function SelectValue({
+  className,
+  children,
+  ...props
+}: React.ComponentProps<typeof SelectPrimitive.Value>) {
+  return (
+    <SelectPrimitive.Value className={cn(className)} {...props}>
+      {children}
+    </SelectPrimitive.Value>
+  );
+}
+
+export { Select, SelectTrigger, SelectContent, SelectItem, SelectValue };

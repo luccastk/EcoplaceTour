@@ -1,4 +1,4 @@
-import Placeholder from "../../assets/images/placeholder.svg";
+import Map from "../../assets/images/map.webp";
 
 export interface TechnicalVisit {
   id: number;
@@ -24,7 +24,7 @@ export const TechnicalVisitItems: TechnicalVisit[] = [
     duration: "4 horas",
     price: "R$ 350",
     date: "20 Mar",
-    image: Placeholder,
+    image: Map,
     description:
       "Visite a fábrica mais avançada do Brasil em automação industrial e IoT.",
     spots: 20,
@@ -39,7 +39,7 @@ export const TechnicalVisitItems: TechnicalVisit[] = [
     duration: "3 horas",
     price: "R$ 280",
     date: "25 Mar",
-    image: Placeholder,
+    image: Map,
     description: "Conheça práticas sustentáveis e economia circular.",
     spots: 25,
     availableSpots: 12,
@@ -53,7 +53,7 @@ export const TechnicalVisitItems: TechnicalVisit[] = [
     duration: "6 horas",
     price: "R$ 420",
     date: "2 Abr",
-    image: Placeholder,
+    image: Map,
     description:
       "Explore laboratórios de pesquisa e inovação em agricultura de precisão.",
     spots: 15,

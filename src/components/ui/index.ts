@@ -8,3 +8,4 @@ export * from "./separator";
 export * from "./select";
 export * from "./textarea";
 export * from "./educa-card";
+export * from "./tooltip";

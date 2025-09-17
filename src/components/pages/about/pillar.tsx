@@ -3,7 +3,7 @@ import {
   ANIMATION_DELAY_0,
   ANIMATION_DELAY_200,
   ANIMATION_DELAY_400,
-} from "../../../constants";
+} from "../../../lib/constants";
 import { BooksIcon } from "../../icons";
 import { AnimatedDiv } from "../../ui/animations";
 import { Link } from "react-router-dom";

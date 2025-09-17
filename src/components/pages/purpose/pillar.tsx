@@ -4,7 +4,7 @@ import {
   ANIMATION_DELAY_200,
   ANIMATION_DELAY_400,
   ANIMATION_DELAY_600,
-} from "../../../constants";
+} from "../../../lib/constants";
 import { BooksIcon, PeopleIcon } from "../../icons";
 import { AnimatedDiv } from "../../ui/animations";
 

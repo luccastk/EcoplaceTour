@@ -8,9 +8,9 @@ import {
   ANIMATION_DELAY_400,
   ANIMATION_DELAY_600,
   ANIMATION_DELAY_800,
-} from "../../../constants";
+  HeroItems,
+} from "../../../lib/constants";
 import { useScreenDetector } from "../../../hooks/use-screen-detector.hook";
-import { HeroItems } from "../../../lib/constants";
 import { cn } from "../../../lib/utils";
 import { AnimatedDiv, Button } from "../../ui";
 import { HeroMobile } from "./hero-mobile";
@@ -108,9 +108,10 @@ export function Hero() {
                     <span
                       className="absolute top-0 h-full bg-primary transition-all duration-500 ease-in-out rounded-full"
                       style={{
-                        width: `${100 / HeroItems.length}%`,
+                        width: `${100 / HeroItems.slice(0, 3).length}%`,
                         left: `${
-                          (selectedSubheadline / HeroItems.length) * 100
+                          (selectedSubheadline / HeroItems.slice(0, 3).length) *
+                          100
                         }%`,
                       }}
                     />
@@ -141,20 +142,20 @@ export function Hero() {
                             {item.title}
                           </button>
                         </li>
-                      ))}
+                      )).slice(0, 3)}
                     </ul>
 
                     <div className="space-y-2">
-                      {HeroItems[selectedSubheadline]?.subheadlines.map(
-                        (subheadline) => (
+                      {HeroItems[selectedSubheadline]?.subheadlines
+                        .map((subheadline) => (
                           <p
                             key={subheadline}
                             className="text-muted-foreground text-sm xl:text-base leading-relaxed"
                           >
                             {subheadline}
                           </p>
-                        )
-                      )}
+                        ))
+                        .slice(0, 3)}
                     </div>
                   </nav>
                 </div>
@@ -174,7 +175,11 @@ export function Hero() {
                   key={item.title}
                   className="flex-[0_0_100%] min-w-0 h-full relative"
                 >
-                  <item.children />
+                  <img
+                    src={item.image}
+                    alt={`Imagem representativa para ${item.title}`}
+                    className="w-full h-full object-cover"
+                  />
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent" />
                 </div>
               ))}

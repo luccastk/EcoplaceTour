@@ -4,12 +4,15 @@ import useEmblaCarousel from "embla-carousel-react";
 import { useEffect, useState } from "react";
 
 export const useCarousel = () => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
-    Autoplay({
-      delay: 5000,
-    }),
-    Fade(),
-  ]);
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { loop: true, align: "center", containScroll: "trimSnaps" },
+    [
+      Autoplay({
+        delay: 5000,
+      }),
+      Fade(),
+    ]
+  );
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   useEffect(() => {

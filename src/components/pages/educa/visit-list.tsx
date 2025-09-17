@@ -1,7 +1,7 @@
 import { TechnicalVisitItems } from "../../../lib/constants/technical-visits";
 import { EducaCard } from "../../ui/educa-card";
 import { AnimatedDiv } from "../../ui/animations";
-import { ANIMATION_DELAY_400 } from "../../../constants";
+import { ANIMATION_DELAY_400 } from "../../../lib/constants";
 
 export function EducaVisitsList() {
   return (

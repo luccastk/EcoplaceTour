@@ -5,7 +5,7 @@ import { BudgetTitle } from "./title";
 import { Send } from "lucide-react";
 import { AnimatedDiv } from "../../ui/animations";
 import { Button } from "../../ui/button";
-import { ANIMATION_DELAY_400 } from "../../../constants";
+import { ANIMATION_DELAY_400 } from "../../../lib/constants";
 
 interface FormData {
   fullName: string;

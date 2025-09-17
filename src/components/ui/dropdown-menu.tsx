@@ -95,7 +95,7 @@ function DropdownMenuItem({
 
 function DropdownMenuSub({
   ...props
-}: React.ComponentProps<typeof DropdownMenuPrimitive.Sub>) {
+}: Readonly<React.ComponentProps<typeof DropdownMenuPrimitive.Sub>>) {
   return <DropdownMenuPrimitive.Sub {...props} />;
 }
 

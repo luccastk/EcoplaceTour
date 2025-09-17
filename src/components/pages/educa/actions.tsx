@@ -1,22 +1,26 @@
-import { Book, MapPin, SearchIcon, Star, X, Filter } from "lucide-react";
+import { Book, MapPin, SearchIcon, Star, X } from "lucide-react";
 import { useState } from "react";
+import { useScreenDetector } from "../../../hooks";
 import {
   Input,
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
+  SelectValue,
 } from "../../ui";
 import { Chip } from "../../ui/chip";
-import { useScreenDetector } from "../../../hooks";
 
 export function EducaActions() {
   const [searchTerm, setSearchTerm] = useState("");
   const [activeFilters, setActiveFilters] = useState<string[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [selectedLocation, setSelectedLocation] = useState("all");
+  const [selectedSort, setSelectedSort] = useState("all");
   const { isDesktop } = useScreenDetector();
 
   const categories = [
-    { value: "all", label: "Todas as categorias" },
+    { value: "all", label: "Categorias" },
     { value: "educational", label: "Educacional" },
     { value: "immersive", label: "Imersão" },
     { value: "consulting", label: "Consultoria" },
@@ -24,7 +28,7 @@ export function EducaActions() {
   ];
 
   const locations = [
-    { value: "all", label: "Todas as localizações" },
+    { value: "all", label: "Localizações" },
     { value: "sp", label: "São Paulo" },
     { value: "rj", label: "Rio de Janeiro" },
     { value: "mg", label: "Minas Gerais" },
@@ -33,7 +37,7 @@ export function EducaActions() {
   ];
 
   const popularity = [
-    { value: "all", label: "Todas" },
+    { value: "all", label: "Ordenar" },
     { value: "popular", label: "Mais populares" },
     { value: "recent", label: "Mais recentes" },
     { value: "rating", label: "Melhor avaliados" },
@@ -43,11 +47,6 @@ export function EducaActions() {
     setActiveFilters((prev) =>
       prev.filter((filter) => filter !== filterToRemove)
     );
-  };
-
-  const clearAllFilters = () => {
-    setActiveFilters([]);
-    setSearchTerm("");
   };
 
   return (
@@ -70,14 +69,18 @@ export function EducaActions() {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-3">
-          <Select>
+          <Select value={selectedCategory} onValueChange={setSelectedCategory}>
             <SelectTrigger className="h-12 min-w-[180px]">
               <div className="flex items-center gap-2">
                 <Book className="w-4 h-4 text-primary" />
-                <span>Categorias</span>
+                <SelectValue placeholder="Categorias" />
               </div>
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent
+              position="popper"
+              sideOffset={4}
+              className="min-w-[180px]"
+            >
               {categories.map((category) => (
                 <SelectItem key={category.value} value={category.value}>
                   {category.label}
@@ -86,14 +89,18 @@ export function EducaActions() {
             </SelectContent>
           </Select>
 
-          <Select>
+          <Select value={selectedLocation} onValueChange={setSelectedLocation}>
             <SelectTrigger className="h-12 min-w-[180px]">
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-primary" />
-                <span>Localização</span>
+                <SelectValue placeholder="Localização" />
               </div>
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent
+              position="popper"
+              sideOffset={4}
+              className="min-w-[180px]"
+            >
               {locations.map((location) => (
                 <SelectItem key={location.value} value={location.value}>
                   {location.label}
@@ -102,14 +109,18 @@ export function EducaActions() {
             </SelectContent>
           </Select>
 
-          <Select>
-            <SelectTrigger className="h-12 min-w-[160px]">
+          <Select value={selectedSort} onValueChange={setSelectedSort}>
+            <SelectTrigger className="h-12 min-w-[180px]">
               <div className="flex items-center gap-2">
                 <Star className="w-4 h-4 text-primary" />
-                <span>Ordenar</span>
+                <SelectValue placeholder="Ordenar" />
               </div>
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent
+              position="popper"
+              sideOffset={4}
+              className="min-w-[180px]"
+            >
               {popularity.map((option) => (
                 <SelectItem key={option.value} value={option.value}>
                   {option.label}
@@ -121,23 +132,12 @@ export function EducaActions() {
       </div>
 
       {/* Filtros ativos */}
-      {(activeFilters.length > 0 || searchTerm) && (
+      {(activeFilters.length > 0 ||
+        searchTerm ||
+        selectedCategory !== "all" ||
+        selectedLocation !== "all" ||
+        selectedSort !== "all") && (
         <div className="flex flex-col gap-3">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <Filter className="w-4 h-4 text-muted-foreground" />
-              <span className="text-sm text-muted-foreground">
-                Filtros ativos ({activeFilters.length + (searchTerm ? 1 : 0)})
-              </span>
-            </div>
-            <button
-              onClick={clearAllFilters}
-              className="text-sm text-primary hover:text-primary/80 transition-colors"
-            >
-              Limpar todos
-            </button>
-          </div>
-
           <div className="flex flex-wrap items-center gap-2">
             {searchTerm && (
               <Chip
@@ -145,6 +145,36 @@ export function EducaActions() {
                 icon={X}
                 className="bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 transition-colors"
                 onClick={() => setSearchTerm("")}
+              />
+            )}
+            {selectedCategory !== "all" && (
+              <Chip
+                label={`Categoria: ${
+                  categories.find((c) => c.value === selectedCategory)?.label
+                }`}
+                icon={X}
+                className="bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 transition-colors"
+                onClick={() => setSelectedCategory("all")}
+              />
+            )}
+            {selectedLocation !== "all" && (
+              <Chip
+                label={`Local: ${
+                  locations.find((l) => l.value === selectedLocation)?.label
+                }`}
+                icon={X}
+                className="bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 transition-colors"
+                onClick={() => setSelectedLocation("all")}
+              />
+            )}
+            {selectedSort !== "all" && (
+              <Chip
+                label={`Ordenar: ${
+                  popularity.find((p) => p.value === selectedSort)?.label
+                }`}
+                icon={X}
+                className="bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 transition-colors"
+                onClick={() => setSelectedSort("all")}
               />
             )}
             {activeFilters.map((filter) => (

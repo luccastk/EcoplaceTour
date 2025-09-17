@@ -1,4 +1,4 @@
-import { ANIMATION_DELAY_0, ANIMATION_DELAY_200 } from "../../../constants";
+import { ANIMATION_DELAY_0, ANIMATION_DELAY_200 } from "../../../lib/constants";
 import { AnimatedDiv } from "../../ui/animations";
 
 export function PurposeTitle() {

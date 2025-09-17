@@ -1,4 +1,7 @@
-import Placeholder from "../../assets/images/placeholder.svg";
+import Children from "../../assets/images/children.webp";
+import Passport from "../../assets/images/passport.webp";
+import Bus from "../../assets/images/bus.webp";
+import Map from "../../assets/images/map.webp";
 
 export const HeroItems = [
   {
@@ -10,7 +13,7 @@ export const HeroItems = [
       "Construa networking estratégico e leve insights aplicáveis diretamente para sua carreira.",
     ],
     cta: "Quero Participar",
-    children: Placeholder,
+    image: Children,
   },
   {
     id: 2,
@@ -21,7 +24,7 @@ export const HeroItems = [
       "Cresça pessoal e profissionalmente com experiências imersivas que unem aprendizado e cultura.",
     ],
     cta: "Ver Próximas Datas",
-    children: Placeholder,
+    image: Passport,
   },
   {
     id: 3,
@@ -32,6 +35,14 @@ export const HeroItems = [
       "Cada viagem e visita técnica é desenhada para gerar valor direto para sua carreira.",
     ],
     cta: "Quero Alcançar Meus Objetivos",
-    children: Placeholder,
+    image: Bus,
+  },
+  {
+    id: 4,
+    title: "",
+    headline: "",
+    subheadlines: [],
+    cta: "",
+    image: Map,
   },
 ];

@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 import { useScreenDetector } from "../../../hooks/use-screen-detector.hook";
 import { AnimatedDiv } from "../../ui/animations";
-import { ANIMATION_DELAY_0, ANIMATION_DELAY_200 } from "../../../constants";
+import { ANIMATION_DELAY_0, ANIMATION_DELAY_200 } from "../../../lib/constants";
 
 const AboutItems = [
   {

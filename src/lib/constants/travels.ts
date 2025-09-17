@@ -1,4 +1,4 @@
-import Placeholder from "../../assets/images/placeholder.svg";
+import Map from "../../assets/images/map.webp";
 
 export interface Travel {
   id: number;
@@ -21,7 +21,7 @@ export const TravelItems: Travel[] = [
     duration: "3 dias",
     price: "R$ 890",
     date: "15-17 Mar",
-    image: Placeholder,
+    image: Map,
     description:
       "Explore as tecnologias mais avançadas da Indústria 4.0 em empresas líderes do setor.",
     spots: 25,
@@ -34,7 +34,7 @@ export const TravelItems: Travel[] = [
     duration: "4 dias",
     price: "R$ 1.250",
     date: "22-25 Mar",
-    image: Placeholder,
+    image: Map,
     description:
       "Conheça projetos inovadores de sustentabilidade urbana e economia verde.",
     spots: 20,
@@ -47,7 +47,7 @@ export const TravelItems: Travel[] = [
     duration: "5 dias",
     price: "R$ 1.650",
     date: "5-9 Abr",
-    image: Placeholder,
+    image: Map,
     description:
       "Imersão completa no ecossistema de inovação e tecnologia de Santa Catarina.",
     spots: 15,

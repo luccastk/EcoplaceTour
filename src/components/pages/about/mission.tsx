@@ -1,4 +1,4 @@
-import { ANIMATION_DELAY_0 } from "../../../constants";
+import { ANIMATION_DELAY_0 } from "../../../lib/constants";
 import { AnimatedDiv } from "../../ui/animations";
 import { Earth } from "lucide-react";
 
