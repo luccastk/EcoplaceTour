@@ -31,10 +31,10 @@ export function HeroMobile() {
           </div>
         </div>
 
-        <div className="relative min-h-0">
+        <div className="relative min-h-0 md:max-h-[60vh]">
           <div
             id={carouselId}
-            className="overflow-hidden h-full rounded-lg"
+            className="overflow-hidden h-full rounded-lg md:max-h-[50vh]"
             ref={emblaRef}
             aria-live="polite"
           >
@@ -47,7 +47,7 @@ export function HeroMobile() {
                   <img
                     src={item.image}
                     alt={`Imagem representativa para ${item.title}`}
-                    className="w-full object-cover h-full"
+                    className="w-full h-full object-cover md:object-center"
                   />
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/90" />
                 </div>

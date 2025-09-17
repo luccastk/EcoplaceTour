@@ -8,6 +8,8 @@ import {
   TrendingUp,
 } from "lucide-react";
 import { useState } from "react";
+import { useScreenDetector } from "../../../hooks";
+import useUiStateStore from "../../../stores/ui-state.store";
 import { Button } from "../../ui/button";
 import {
   DropdownMenu,
@@ -16,7 +18,6 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "../../ui/dropdown-menu";
-import { useScreenDetector } from "../../../hooks";
 
 const sortOptions = [
   {
@@ -56,17 +57,18 @@ const viewOptions = [
 
 export function EducaFilters() {
   const [sortBy, setSortBy] = useState("newest");
-  const [viewMode, setViewMode] = useState("list");
   const [totalResults] = useState(384);
   const { isMobile } = useScreenDetector();
+
+  const { viewEduca, setViewEduca } = useUiStateStore();
 
   const handleSortChange = (value: string) => {
     setSortBy(value);
     console.log("Sort changed to:", value);
   };
 
-  const handleViewChange = (value: string) => {
-    setViewMode(value);
+  const handleViewChange = (value: "list" | "grid") => {
+    setViewEduca(value);
     console.log("View changed to:", value);
   };
 
@@ -143,11 +145,13 @@ export function EducaFilters() {
                 <DropdownMenuItem
                   key={option.value}
                   className="cursor-pointer flex items-center gap-3"
-                  onClick={() => handleViewChange(option.value)}
+                  onClick={() =>
+                    handleViewChange(option.value as "list" | "grid")
+                  }
                 >
                   <Icon className="w-4 h-4 text-muted-foreground" />
                   <span>{option.label}</span>
-                  {viewMode === option.value && (
+                  {viewEduca === option.value && (
                     <div className="ml-auto w-2 h-2 rounded-full bg-primary" />
                   )}
                 </DropdownMenuItem>
@@ -162,9 +166,11 @@ export function EducaFilters() {
             variant="outline"
             size="sm"
             className="h-10 px-3"
-            onClick={() => setViewMode(viewMode === "list" ? "grid" : "list")}
+            onClick={() => {
+              setViewEduca(viewEduca === "list" ? "grid" : "list");
+            }}
           >
-            {viewMode === "list" ? (
+            {viewEduca === "grid" ? (
               <LayoutGridIcon className="w-4 h-4" />
             ) : (
               <List className="w-4 h-4" />

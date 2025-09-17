@@ -1,5 +1,6 @@
 import { EducaActions } from "./actions";
 import { EducaFilters } from "./filters";
+import { EducaGridSection } from "./grid-section";
 import { EducaTitle } from "./title";
 import { EducaVisitsList } from "./visit-list";
 
@@ -17,7 +18,9 @@ export function EducaPage() {
       </div>
 
       <div id="visits-section">
-        <EducaVisitsList />
+        <EducaGridSection>
+          <EducaVisitsList />
+        </EducaGridSection>
       </div>
     </section>
   );

@@ -1,5 +1,8 @@
+import { Button } from "./button";
+
 interface EducaCardProps {
   image: string;
+  images?: string[];
   imageAlt: string;
   title: string;
   company: string;
@@ -8,10 +11,12 @@ interface EducaCardProps {
   description: string;
   availableSpots: number;
   date: string;
+  view?: "list" | "grid";
 }
 
 export function EducaCard({
   image,
+  images,
   imageAlt,
   title,
   company,
@@ -20,7 +25,48 @@ export function EducaCard({
   description,
   availableSpots,
   date,
+  view = "grid",
 }: Readonly<EducaCardProps>) {
+  if (view === "list") {
+    return (
+      <div className="bg-background py-3 px-5 rounded-xl overflow-hidden border border-border hover:shadow-sm transition-all duration-300 flex gap-4">
+        <div className="w-xl flex flex-col justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <img
+              src={image}
+              alt={imageAlt}
+              className="w-30 h-30 shrink-0 rounded-xl object-cover transition-transform duration-300"
+            />
+            <div>
+              <h3 className="font-bold text-xl text-gray-900 mb-2">{title}</h3>
+              <p className="text-primary font-semibold text-sm mb-1">
+                {company}
+              </p>
+              <p className="text-gray-600 text-sm mb-3">
+                {location} • {duration}
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <Button variant="solid">Solicitar Orçamento</Button>
+          </div>
+        </div>
+
+        <div className="flex gap-2 overflow-hidden">
+          {images?.map((image) => (
+            <img
+              key={image}
+              src={image}
+              alt={imageAlt}
+              className="hidden lg:block size-50 object-cover transition-transform duration-300"
+            />
+          ))}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
       <div className="relative h-64 overflow-hidden">

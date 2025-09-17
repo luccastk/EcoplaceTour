@@ -9,12 +9,12 @@ import {
   PurposePage,
   TravelsPage,
 } from "./components/pages";
-import { ScrollToTop } from "./components/ScrollToTop";
+import { ScrollToTop } from "./lib/functions/ScrollToTop";
 import { cn } from "./lib/utils";
-import UiStateStore from "./stores/ui-state.store";
+import useUiStateStore from "./stores/ui-state.store";
 
 function App() {
-  const { isLoadingPage, setIsLoadingPage } = UiStateStore();
+  const { isLoadingPage, setIsLoadingPage } = useUiStateStore();
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoadingPage(false), 2000);
